@@ -1,0 +1,41 @@
+name: Watch for new FOCUS spec versions
+
+on:
+  schedule:
+    - cron: "41 14 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Look for versions not yet in the registry
+        id: diff
+        run: |
+          set -euo pipefail
+          tags=$(curl -fsSL "https://api.github.com/repos/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/releases?per_page=20" \
+            | python3 -c "import sys,json; print('\n'.join(r['tag_name'] for r in json.load(sys.stdin)))" || true)
+          missing=""
+          for t in $tags; do
+            v=$(echo "$t" | sed -E 's/^v?([0-9]+)\.([0-9]+).*/v\1-\2/')
+            case "$v" in v[0-9]*-[0-9]*) ;; *) continue ;; esac
+            grep -q "spec-site-$v" registry/focus-ecosystem.yaml || missing="$missing $t"
+          done
+          echo "missing=$(echo $missing | xargs)" >> "$GITHUB_OUTPUT"
+      - name: Open an issue if a release is missing from the registry
+        if: steps.diff.outputs.missing != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const missing = '${{ steps.diff.outputs.missing }}';
+            await github.rest.issues.create({
+              ...context.repo,
+              title: `New FOCUS spec release(s) not in registry: ${missing}`,
+              body: `The FOCUS_Spec repo has release tags missing from registry/focus-ecosystem.yaml: ${missing}.\n\nFollow "When the spec ships a release" in CONTRIBUTING.md.`,
+              labels: ['maintenance'],
+            });

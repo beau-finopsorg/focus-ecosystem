@@ -1,0 +1,521 @@
+# Source of truth for the FOCUS ecosystem index.
+# README.md is generated from this file: run `python3 scripts/build_readme.py`.
+# Fields: id, name, category, url, description, kind (repo|site|tool|doc|program|community|package|provider),
+#         owner (who maintains it), status (active|archived|internal|unverified), verified (YYYY-MM-DD).
+# Use status "unverified" for anything not confirmed first-hand; CI lists these in the backlog.
+
+categories:
+  - id: spec
+    title: Specification
+    blurb: The normative FOCUS specification, its releases, and its source.
+  - id: columns
+    title: Column Library and Data Model
+    blurb: Column definitions, schema reference, and machine-readable access.
+  - id: usecases
+    title: Use Case Library
+    blurb: FinOps scenarios with SQL queries written against FOCUS columns.
+  - id: sandbox
+    title: Sandbox and Sample Data
+    blurb: Anonymized real FOCUS billing data you can query or download.
+  - id: validator
+    title: Validator
+    blurb: Check a dataset against a specific FOCUS version.
+  - id: converters
+    title: Converters and Mapping
+    blurb: Turn native billing data into FOCUS.
+  - id: tooling
+    title: Other Tools
+    blurb: Supporting utilities, requirements tooling, and AI access.
+  - id: conformance
+    title: Conformance and Governance
+    blurb: Certification, project charter, and contribution mechanics.
+  - id: adoption
+    title: Adoption and Guides
+    blurb: Who produces and consumes FOCUS, and how to start.
+  - id: community
+    title: Community
+    blurb: Where to ask questions and give feedback.
+
+entries:
+  # ---- Specification ----
+  - id: spec-site-v1-4
+    name: FOCUS Specification v1.4 (latest)
+    category: spec
+    kind: doc
+    url: https://focus.finops.org/docs/specification/v1-4/
+    description: Latest published release. 123 columns, 5 datasets.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: spec-site-v1-3
+    name: FOCUS Specification v1.3
+    category: spec
+    kind: doc
+    url: https://focus.finops.org/docs/specification/v1-3/
+    description: 78 columns, 3 datasets.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: spec-site-v1-2
+    name: FOCUS Specification v1.2
+    category: spec
+    kind: doc
+    url: https://focus.finops.org/docs/specification/v1-2/
+    description: 57 columns. Introduced SaaS and PaaS mappings.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: spec-site-v1-1
+    name: FOCUS Specification v1.1
+    category: spec
+    kind: doc
+    url: https://focus.finops.org/docs/specification/v1-1/
+    description: 50 columns.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: spec-site-v1-0
+    name: FOCUS Specification v1.0
+    category: spec
+    kind: doc
+    url: https://focus.finops.org/docs/specification/v1-0/
+    description: First general availability release. 43 columns.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: spec-site-v0-5
+    name: FOCUS Specification v0.5
+    category: spec
+    kind: doc
+    url: https://focus.finops.org/docs/specification/v0-5/
+    description: Pre-GA release. 21 columns.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: spec-v1-5-scope
+    name: FOCUS 1.5 Release Overview
+    category: spec
+    kind: doc
+    url: https://focus.finops.org/focus-1-5-release-scope/
+    description: Scope of the in-progress 1.5 release, including AI token billing labels and a SKU Price dataset.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: repo-focus-spec
+    name: FOCUS_Spec
+    category: spec
+    kind: repo
+    url: https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec
+    description: Source of the specification. Active development happens on the working_draft branch.
+    owner: FinOps-Open-Cost-and-Usage-Spec
+    status: active
+    verified: 2026-11-20
+  - id: spec-pdf-v1-3
+    name: FOCUS v1.3 PDF
+    category: spec
+    kind: doc
+    url: https://focus.finops.org/wp-content/uploads/2025/12/FOCUS_spec-v1_3.pdf
+    description: Published PDF of v1.3.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: spec-pdf-v1-2
+    name: FOCUS v1.2 PDF
+    category: spec
+    kind: doc
+    url: https://focus.finops.org/wp-content/uploads/2025/05/FOCUS-spec-v1_2.pdf
+    description: Published PDF of v1.2.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: spec-pdf-v1-1
+    name: FOCUS v1.1 PDF
+    category: spec
+    kind: doc
+    url: https://focus.finops.org/wp-content/uploads/2024/11/FOCUS-spec-v1_1.pdf
+    description: Published PDF of v1.1.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+
+  # ---- Columns ----
+  - id: column-library
+    name: Column Library
+    category: columns
+    kind: site
+    url: https://focus.finops.org/docs/column-library/
+    description: Definitions for every FOCUS column with category, dataset, and version history.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: data-model
+    name: FOCUS Data Model (spreadsheet)
+    category: columns
+    kind: doc
+    url: https://focus.finops.org/docs/tools-assets/assets/data-model/
+    description: Flat, filterable reference of every dataset, column, feature level, and allowed value.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+
+  # ---- Use cases ----
+  - id: use-case-library
+    name: Use Case Library (spec section)
+    category: usecases
+    kind: doc
+    url: https://focus.finops.org/docs/specification/v1-2/sections/use-case-library/
+    description: Use cases organized by persona and capability. Individual use cases live under /docs/use-cases/<version>/<slug>/ and number 100+.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: use-case-example
+    name: Example use case page (v1.4)
+    category: usecases
+    kind: doc
+    url: https://focus.finops.org/docs/use-cases/v1-4/allocate-multi-currency-charges-per-application-2/
+    description: Shows the per-use-case page format with linked columns, personas, and SQL.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+
+  # ---- Sandbox ----
+  - id: sandbox
+    name: FOCUS Sandbox
+    category: sandbox
+    kind: site
+    url: https://focus.finops.org/sandbox/
+    description: Run Use Case Library SQL against anonymized multi-cloud FOCUS data (September 2024 billing month).
+    owner: FinOps Foundation
+    status: active
+    verified: 2026-11-20
+  - id: sandbox-docs
+    name: Query Sandbox docs
+    category: sandbox
+    kind: doc
+    url: https://focus.finops.org/docs/tools-assets/tools/query-sandbox/
+    description: Documentation page for the sandbox.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: sandbox-article
+    name: "FOCUS Sandbox and sample data available now"
+    category: sandbox
+    kind: doc
+    url: https://www.finops.org/insights/focus-sandbox/
+    description: How the sandbox was built and how to use it (December 2024).
+    owner: FinOps Foundation
+    status: active
+    verified: 2026-11-20
+  - id: repo-sample-data
+    name: FOCUS-Sample-Data
+    category: sandbox
+    kind: repo
+    url: https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS-Sample-Data
+    description: Repository to store and share samples of FOCUS datasets.
+    owner: FinOps-Open-Cost-and-Usage-Spec
+    status: active
+    verified: 2026-11-20
+
+  # ---- Validator ----
+  - id: repo-validator
+    name: focus_validator
+    category: validator
+    kind: repo
+    url: https://github.com/finopsfoundation/focus_validator
+    description: Python application that validates datasets against a FOCUS version. Used by the Conformance Program.
+    owner: finopsfoundation
+    status: active
+    verified: 2026-11-20
+  - id: pypi-validator
+    name: focus-validator on PyPI
+    category: validator
+    kind: package
+    url: https://pypi.org/project/focus-validator/
+    description: Package listing. PyPI text still references the older focus-spec-validator repo name, so prefer the GitHub repo above for current docs.
+    owner: finopsfoundation
+    status: active
+    verified: 2026-11-20
+  - id: validator-docs
+    name: FOCUS Validator docs
+    category: validator
+    kind: doc
+    url: https://focus.finops.org/docs/tools-assets/tools/focus-validator/
+    description: Documentation page on focus.finops.org (content was empty when checked).
+    owner: FOCUS Project
+    status: unverified
+    verified: 2026-11-20
+
+  # ---- Converters ----
+  - id: repo-converters
+    name: focus_converters
+    category: converters
+    kind: repo
+    url: https://github.com/finopsfoundation/focus_converters
+    description: CLI that converts AWS, Google Cloud, Azure, and Oracle Cloud billing data to FOCUS using YAML rules. MIT licensed.
+    owner: finopsfoundation
+    status: active
+    verified: 2026-11-20
+  - id: pypi-converter
+    name: focus-converter on PyPI
+    category: converters
+    kind: package
+    url: https://pypi.org/project/focus-converter/
+    description: "Install with pip install focus_converter."
+    owner: finopsfoundation
+    status: active
+    verified: 2026-11-20
+  - id: repo-converter-oci
+    name: focus_converter_oraclecloud
+    category: converters
+    kind: repo
+    url: https://github.com/finopsfoundation/focus_converter_oraclecloud
+    description: Oracle Cloud converter repository. No description on GitHub.
+    owner: finopsfoundation
+    status: active
+    verified: 2026-11-20
+  - id: repo-converter-gcp
+    name: focus_converter_googlecloud
+    category: converters
+    kind: repo
+    url: https://github.com/finopsfoundation/focus_converter_googlecloud
+    description: Google Cloud converter repository. No description on GitHub.
+    owner: finopsfoundation
+    status: active
+    verified: 2026-11-20
+  - id: repo-mapping-templates
+    name: FOCUS_Mapping_Templates
+    category: converters
+    kind: repo
+    url: https://github.com/finopsfoundation/FOCUS_Mapping_Templates
+    description: Open repository of FOCUS mapping templates.
+    owner: finopsfoundation
+    status: active
+    verified: 2026-11-20
+
+  # ---- Other tools ----
+  - id: mcp-server
+    name: FOCUS MCP Server
+    category: tooling
+    kind: tool
+    url: https://focus.finops.org/docs/tools-assets/tools/focus-mcp-server/
+    description: "Read-only MCP access to the spec, columns, use cases, queries, and providers. Connection URL: https://focus.finops.org/wp-json/focus/v1/mcp"
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: repo-scrub
+    name: focus_scrub
+    category: tooling
+    kind: repo
+    url: https://github.com/finopsfoundation/focus_scrub
+    description: Tool for scrubbing PII from FOCUS datasets.
+    owner: finopsfoundation
+    status: active
+    verified: 2026-11-20
+  - id: repo-rm-analyzer
+    name: focus_requirements_model_analyzer
+    category: tooling
+    kind: repo
+    url: https://github.com/FinOps-Open-Cost-and-Usage-Spec/focus_requirements_model_analyzer
+    description: Model and view FOCUS normative requirements.
+    owner: FinOps-Open-Cost-and-Usage-Spec
+    status: active
+    verified: 2026-11-20
+  - id: repo-rm-extraction
+    name: FOCUS_RM_Extraction
+    category: tooling
+    kind: repo
+    url: https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_RM_Extraction
+    description: Extract and compare the Requirements Model for FOCUS development.
+    owner: FinOps-Open-Cost-and-Usage-Spec
+    status: active
+    verified: 2026-11-20
+  - id: repo-otel
+    name: focus-otel-semconv
+    category: tooling
+    kind: repo
+    url: https://github.com/FinOps-Open-Cost-and-Usage-Spec/focus-otel-semconv
+    description: Community specification repository for a focus.* identifier registry (OpenTelemetry semantic conventions). Fork.
+    owner: FinOps-Open-Cost-and-Usage-Spec
+    status: active
+    verified: 2026-11-20
+
+  # ---- Conformance and governance ----
+  - id: certified-program
+    name: Certified FOCUS Conformance Program
+    category: conformance
+    kind: program
+    url: https://focus.finops.org/certified-focus-program/
+    description: Certification guide, branding rules, and requirements for data providers.
+    owner: FinOps Foundation
+    status: active
+    verified: 2026-11-20
+  - id: conformant-requirements
+    name: FinOps Certified FOCUS Conformant (requirements)
+    category: conformance
+    kind: program
+    url: https://www.finops.org/certification-for-organizations/finops-certified-focus-conformant/
+    description: Steps to certify, including sample data and the validator run.
+    owner: FinOps Foundation
+    status: active
+    verified: 2026-11-20
+  - id: repo-foundation-focus
+    name: foundation (FOCUS)
+    category: conformance
+    kind: repo
+    url: https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation
+    description: FOCUS project charter and legal documentation, including the membership agreement package.
+    owner: FinOps-Open-Cost-and-Usage-Spec
+    status: active
+    verified: 2026-11-20
+  - id: repo-easycla
+    name: EasyCLA
+    category: conformance
+    kind: repo
+    url: https://github.com/FinOps-Open-Cost-and-Usage-Spec/EasyCLA
+    description: Setup for EasyCLA, which manages specification membership signatures.
+    owner: FinOps-Open-Cost-and-Usage-Spec
+    status: active
+    verified: 2026-11-20
+  - id: contribute
+    name: Become a Contributor
+    category: conformance
+    kind: doc
+    url: https://focus.finops.org/contribute/
+    description: How to join FOCUS working groups and contribute.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+
+  # ---- Adoption ----
+  - id: site-focus
+    name: focus.finops.org
+    category: adoption
+    kind: site
+    url: https://focus.finops.org/
+    description: Home of the FOCUS project.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: what-is-focus
+    name: What is FOCUS?
+    category: adoption
+    kind: doc
+    url: https://focus.finops.org/what-is-focus/
+    description: Overview for newcomers.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: faqs
+    name: FOCUS FAQs
+    category: adoption
+    kind: doc
+    url: https://focus.finops.org/faqs/
+    description: Frequently asked questions.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: get-started
+    name: Get Started with FOCUS Datasets
+    category: adoption
+    kind: doc
+    url: https://focus.finops.org/docs/implementation/get-started/get-started-with-focus-datasets/
+    description: How to get FOCUS data from each provider.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: supporting-assets
+    name: Papers and guides
+    category: adoption
+    kind: doc
+    url: https://focus.finops.org/docs/tools-assets/assets/supporting-assets/
+    description: Papers on FinOps data workflows, data center cost modeling, and provider pipelines.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: tech-categories
+    name: FOCUS for Technology Categories
+    category: adoption
+    kind: doc
+    url: https://focus.finops.org/technology-categories/
+    description: How FOCUS applies from public cloud to AI, with mapping guidance.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: adoption-generators
+    name: FOCUS Adoption
+    category: adoption
+    kind: doc
+    url: https://focus.finops.org/adoption/
+    description: Generators and consumers of FOCUS data.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: adoption-vendors
+    name: FinOps Vendors Adopting FOCUS
+    category: adoption
+    kind: doc
+    url: https://focus.finops.org/adoption/finops-vendors/
+    description: FinOps tools and their level of FOCUS adoption.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: adoption-practitioners
+    name: FinOps Practitioners Adopting FOCUS
+    category: adoption
+    kind: doc
+    url: https://focus.finops.org/adoption/finops-practitioners/
+    description: Practitioner success stories.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: adoption-saas
+    name: SaaS Vendors Adopting FOCUS
+    category: adoption
+    kind: doc
+    url: https://focus.finops.org/adoption/saas-vendors/
+    description: SaaS vendor adoption.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+  - id: topic-focus
+    name: FinOps Foundation FOCUS topic page
+    category: adoption
+    kind: site
+    url: https://www.finops.org/topic/focus/
+    description: FOCUS content on finops.org.
+    owner: FinOps Foundation
+    status: active
+    verified: 2026-11-20
+
+  # ---- Community ----
+  - id: feedback
+    name: Give Feedback
+    category: community
+    kind: community
+    url: https://focus.finops.org/feedback/
+    description: GitHub issues, the #chat-focus Slack channel in the FinOps Foundation community, and FOCUS community calls.
+    owner: FOCUS Project
+    status: active
+    verified: 2026-11-20
+
+# Data generators that publish FOCUS data. Source: focus.finops.org provider directory (FOCUS MCP list_providers).
+providers:
+  - { name: Alibaba Cloud, url: "https://focus.finops.org/docs/implementation/data-generators/alibaba-cloud/" }
+  - { name: AWS, url: "https://focus.finops.org/docs/implementation/data-generators/aws/" }
+  - { name: Cloudflare, url: "https://developers.cloudflare.com/api/resources/billing/" }
+  - { name: CoreWeave, url: "https://docs.coreweave.com/billing/focus-export-api" }
+  - { name: Databricks, url: "https://focus.finops.org/docs/implementation/data-generators/databricks/" }
+  - { name: Google Cloud, url: "https://focus.finops.org/docs/implementation/data-generators/google-cloud/" }
+  - { name: Grafana Cloud, url: "https://grafana.com/docs/grafana-cloud/cost-management-and-billing/focus/" }
+  - { name: Huawei Cloud, url: "https://support.huaweicloud.com/intl/en-us/usermanual-cost/costcenter_000002_03_07.html" }
+  - { name: Microsoft Azure, url: "https://learn.microsoft.com/azure/cost-management-billing/costs/tutorial-export-acm-data" }
+  - { name: MongoDB, url: "https://www.mongodb.com/products/updates/now-ga-mongodb-atlas-support-for-focus-v1-3-cost-and-usage-reports/" }
+  - { name: Nebius, url: "https://docs.nebius.com/signup-billing/usage/export" }
+  - { name: Oracle Cloud, url: "https://focus.finops.org/docs/implementation/data-generators/oracle-cloud/" }
+  - { name: OVHcloud, url: "https://docs.ovhcloud.com/en/guides/manage-and-operate/cost-center/export-billing-data-to-bucket" }
+  - { name: Redis, url: "https://redis.io/docs/latest/operate/rc/api/examples/generate-cost-report/" }
+  - { name: Snowflake, url: "https://docs.snowflake.com/en/sql-reference/billing/focus_cost_usage_v1_3" }
+  - { name: STACKIT, url: "https://docs.stackit.cloud/platform/cost-and-billing/focus/" }
+  - { name: Tencent Cloud, url: "https://focus.finops.org/docs/implementation/data-generators/tencent-cloud/" }
+  - { name: Vercel, url: "https://vercel.com/docs/rest-api/billing/list-focus-billing-charges" }
+  # IBM Cloud is in the directory but its URL there duplicates Huawei's. Excluded until the source is corrected.

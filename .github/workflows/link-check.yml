@@ -1,0 +1,40 @@
+name: Weekly link check
+
+on:
+  schedule:
+    - cron: "17 13 * * 1"
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "registry/**"
+      - "README.md"
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check links
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress --max-retries 3 --timeout 30
+            --accept 200,206,429
+            README.md registry/focus-ecosystem.yaml
+          output: ./lychee-report.md
+          fail: false
+      - name: Open or update an issue when links are broken
+        if: github.event_name != 'pull_request' && steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: Broken links in the FOCUS ecosystem index
+          content-filepath: ./lychee-report.md
+          labels: maintenance
+      - name: Fail pull requests with broken links
+        if: github.event_name == 'pull_request' && steps.lychee.outputs.exit_code != 0
+        run: cat ./lychee-report.md && exit 1
