@@ -19,7 +19,7 @@ jobs:
         run: |
           set -euo pipefail
           tags=$(curl -fsSL "https://api.github.com/repos/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/releases?per_page=20" \
-            | python3 -c "import sys,json; print('\n'.join(r['tag_name'] for r in json.load(sys.stdin)))" || true)
+            | python3 -c "import sys,json; print('\n'.join(r['tag_name'] for r in json.load(sys.stdin) if not r['prerelease'] and not r['draft']))" || true)
           missing=""
           for t in $tags; do
             v=$(echo "$t" | sed -E 's/^v?([0-9]+)\.([0-9]+).*/v\1-\2/')

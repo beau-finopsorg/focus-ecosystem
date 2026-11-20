@@ -500,22 +500,22 @@ entries:
 
 # Data generators that publish FOCUS data. Source: focus.finops.org provider directory (FOCUS MCP list_providers).
 providers:
-  - { name: Alibaba Cloud, url: "https://focus.finops.org/docs/implementation/data-generators/alibaba-cloud/" }
-  - { name: AWS, url: "https://focus.finops.org/docs/implementation/data-generators/aws/" }
+  - { name: Alibaba Cloud, url: "https://www.alibabacloud.com/help/en/user-center/user-guide/export-alibaba-cloud-standard-billing-focus" }
+  - { name: AWS, url: "https://docs.aws.amazon.com/cur/latest/userguide/dataexports-create-standard.html" }
   - { name: Cloudflare, url: "https://developers.cloudflare.com/api/resources/billing/" }
   - { name: CoreWeave, url: "https://docs.coreweave.com/billing/focus-export-api" }
-  - { name: Databricks, url: "https://focus.finops.org/docs/implementation/data-generators/databricks/" }
-  - { name: Google Cloud, url: "https://focus.finops.org/docs/implementation/data-generators/google-cloud/" }
+  - { name: Databricks, url: "https://github.com/databricks-solutions/cloud-infra-costs/tree/main/focus" }
+  - { name: Google Cloud, url: "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-focus-setup" }
   - { name: Grafana Cloud, url: "https://grafana.com/docs/grafana-cloud/cost-management-and-billing/focus/" }
   - { name: Huawei Cloud, url: "https://support.huaweicloud.com/intl/en-us/usermanual-cost/costcenter_000002_03_07.html" }
   - { name: Microsoft Azure, url: "https://learn.microsoft.com/azure/cost-management-billing/costs/tutorial-export-acm-data" }
   - { name: MongoDB, url: "https://www.mongodb.com/products/updates/now-ga-mongodb-atlas-support-for-focus-v1-3-cost-and-usage-reports/" }
   - { name: Nebius, url: "https://docs.nebius.com/signup-billing/usage/export" }
-  - { name: Oracle Cloud, url: "https://focus.finops.org/docs/implementation/data-generators/oracle-cloud/" }
+  - { name: Oracle Cloud, url: "https://docs.oracle.com/iaas/Content/Billing/Tasks/accessingusagereports.htm" }
   - { name: OVHcloud, url: "https://docs.ovhcloud.com/en/guides/manage-and-operate/cost-center/export-billing-data-to-bucket" }
   - { name: Redis, url: "https://redis.io/docs/latest/operate/rc/api/examples/generate-cost-report/" }
   - { name: Snowflake, url: "https://docs.snowflake.com/en/sql-reference/billing/focus_cost_usage_v1_3" }
   - { name: STACKIT, url: "https://docs.stackit.cloud/platform/cost-and-billing/focus/" }
-  - { name: Tencent Cloud, url: "https://focus.finops.org/docs/implementation/data-generators/tencent-cloud/" }
+  - { name: Tencent Cloud, url: "https://intl.cloud.tencent.com/document/product/555/67495" }
   - { name: Vercel, url: "https://vercel.com/docs/rest-api/billing/list-focus-billing-charges" }
   # IBM Cloud is in the directory but its URL there duplicates Huawei's. Excluded until the source is corrected.

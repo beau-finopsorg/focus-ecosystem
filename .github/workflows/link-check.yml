@@ -25,6 +25,7 @@ jobs:
           args: >-
             --no-progress --max-retries 3 --timeout 30
             --accept 200,206,429
+            --exclude 'wp-json/focus/v1/mcp'
             README.md registry/focus-ecosystem.yaml
           output: ./lychee-report.md
           fail: false

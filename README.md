@@ -146,23 +146,23 @@ Providers listed in the FOCUS provider directory.
 
 | Provider | Getting started |
 |---|---|
-| Alibaba Cloud | [Link](https://focus.finops.org/docs/implementation/data-generators/alibaba-cloud/) |
-| AWS | [Link](https://focus.finops.org/docs/implementation/data-generators/aws/) |
+| Alibaba Cloud | [Link](https://www.alibabacloud.com/help/en/user-center/user-guide/export-alibaba-cloud-standard-billing-focus) |
+| AWS | [Link](https://docs.aws.amazon.com/cur/latest/userguide/dataexports-create-standard.html) |
 | Cloudflare | [Link](https://developers.cloudflare.com/api/resources/billing/) |
 | CoreWeave | [Link](https://docs.coreweave.com/billing/focus-export-api) |
-| Databricks | [Link](https://focus.finops.org/docs/implementation/data-generators/databricks/) |
-| Google Cloud | [Link](https://focus.finops.org/docs/implementation/data-generators/google-cloud/) |
+| Databricks | [Link](https://github.com/databricks-solutions/cloud-infra-costs/tree/main/focus) |
+| Google Cloud | [Link](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-focus-setup) |
 | Grafana Cloud | [Link](https://grafana.com/docs/grafana-cloud/cost-management-and-billing/focus/) |
 | Huawei Cloud | [Link](https://support.huaweicloud.com/intl/en-us/usermanual-cost/costcenter_000002_03_07.html) |
 | Microsoft Azure | [Link](https://learn.microsoft.com/azure/cost-management-billing/costs/tutorial-export-acm-data) |
 | MongoDB | [Link](https://www.mongodb.com/products/updates/now-ga-mongodb-atlas-support-for-focus-v1-3-cost-and-usage-reports/) |
 | Nebius | [Link](https://docs.nebius.com/signup-billing/usage/export) |
-| Oracle Cloud | [Link](https://focus.finops.org/docs/implementation/data-generators/oracle-cloud/) |
+| Oracle Cloud | [Link](https://docs.oracle.com/iaas/Content/Billing/Tasks/accessingusagereports.htm) |
 | OVHcloud | [Link](https://docs.ovhcloud.com/en/guides/manage-and-operate/cost-center/export-billing-data-to-bucket) |
 | Redis | [Link](https://redis.io/docs/latest/operate/rc/api/examples/generate-cost-report/) |
 | Snowflake | [Link](https://docs.snowflake.com/en/sql-reference/billing/focus_cost_usage_v1_3) |
 | STACKIT | [Link](https://docs.stackit.cloud/platform/cost-and-billing/focus/) |
-| Tencent Cloud | [Link](https://focus.finops.org/docs/implementation/data-generators/tencent-cloud/) |
+| Tencent Cloud | [Link](https://intl.cloud.tencent.com/document/product/555/67495) |
 | Vercel | [Link](https://vercel.com/docs/rest-api/billing/list-focus-billing-charges) |
 
 ## GitHub organizations
