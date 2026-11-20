@@ -1,6 +1,9 @@
 <!-- GENERATED FILE. Edit scripts/README.template.md or registry/focus-ecosystem.yaml, then run scripts/build_readme.py. -->
 # FOCUS Ecosystem
 
+[![Link check](https://github.com/beau-finopsorg/focus-ecosystem/actions/workflows/link-check.yml/badge.svg)](https://github.com/beau-finopsorg/focus-ecosystem/actions/workflows/link-check.yml)
+[![Spec freshness](https://github.com/beau-finopsorg/focus-ecosystem/actions/workflows/spec-version-watch.yml/badge.svg)](https://github.com/beau-finopsorg/focus-ecosystem/actions/workflows/spec-version-watch.yml)
+
 One index of everything around the FinOps Open Cost and Usage Specification (FOCUS): the spec, column and use case libraries, sandbox, validator, converters, tools, conformance program, and the data generators that publish FOCUS.
 
 FOCUS is an open specification that defines how technology billing data generators produce consistent cost and usage datasets. This repo only links to the work. It does not host or modify it.
