@@ -7,7 +7,7 @@
 
 One index of everything around the FinOps Open Cost and Usage Specification (FOCUS): the spec, column and use case libraries, sandbox, validator, converters, tools, conformance program, and the data generators that publish FOCUS.
 
-FOCUS is an open specification that defines how technology billing data generators produce consistent cost and usage datasets. This repo only links to the work. It does not host or modify it.
+FOCUS is an open specification that defines how technology billing data generators produce consistent cost and usage datasets. This repo links to that work. It does not host or modify the specification. It also hosts two unofficial community landscape pages on GitHub Pages at https://beau-finopsorg.github.io/focus-ecosystem/.
 
 Latest spec release: **v1.4**. In progress: **v1.5**. Registry last verified: **2026-11-20**.
 
@@ -111,6 +111,8 @@ Supporting utilities, requirements tooling, and AI access.
 | [focus_requirements_model_analyzer](https://github.com/FinOps-Open-Cost-and-Usage-Spec/focus_requirements_model_analyzer) | repo | Model and view FOCUS normative requirements. | 🟡 2026-06-06 |
 | [FOCUS_RM_Extraction](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_RM_Extraction) | repo | Extract and compare the Requirements Model for FOCUS development. | 🟢 2026-11-02 |
 | [focus-otel-semconv](https://github.com/FinOps-Open-Cost-and-Usage-Spec/focus-otel-semconv) | repo | Community specification repository for a focus.* identifier registry (OpenTelemetry semantic conventions). Fork. | 🟡 2026-07-25 |
+| [focus-tools](https://github.com/beau-finopsorg/focus-tools) | repo | Unofficial community schema maps (FOCUS 1.0 through 1.5) and reference architectures. Version 1.5 is a candidate / pre-release. | ⚪ Not dated |
+| [focus-tools (pages)](https://beau-finopsorg.github.io/focus-tools/) | site | Published site for the unofficial community schema maps and reference architectures. | ⚪ Not dated |
 
 ### Conformance and Governance
 
@@ -141,6 +143,9 @@ Who produces and consumes FOCUS, and how to start.
 | [FinOps Practitioners Adopting FOCUS](https://focus.finops.org/adoption/finops-practitioners/) | doc | Practitioner success stories. | 🟡 2025-12-05 |
 | [SaaS Vendors Adopting FOCUS](https://focus.finops.org/adoption/saas-vendors/) | doc | SaaS vendor adoption. | 🟡 2025-12-05 |
 | [FinOps Foundation FOCUS topic page](https://www.finops.org/topic/focus/) | site | FOCUS content on finops.org. | 🟢 2026-11-19 |
+| [focus-gap-analyses](https://github.com/beau-finopsorg/focus-gap-analyses) | repo | Unofficial community gap analyses of 98 data generators, based on public documentation only. Ratings are not certification results. | ⚪ Not dated |
+| [focus-gap-analyses (pages)](https://beau-finopsorg.github.io/focus-gap-analyses/) | site | Readiness scorecard, by-company index, and HTML copies of the 98 unofficial community gap analyses. | ⚪ Not dated |
+| [focus-ecosystem (pages)](https://beau-finopsorg.github.io/focus-ecosystem/) | site | Unofficial community landscape pages: the FOCUS ecosystem landscape (adoption data retrieved 2026-09-08) and the data generator readiness landscape. Ratings are not certification results. | ⚪ Not dated |
 
 ### Community
 
@@ -182,6 +187,16 @@ FOCUS work is split across two GitHub organizations.
 - [FinOps-Open-Cost-and-Usage-Spec](https://github.com/FinOps-Open-Cost-and-Usage-Spec): the specification, sample data, and governance.
 - [finopsfoundation](https://github.com/finopsfoundation): validator, converters, mapping templates, and other tooling.
 
+## Related repos
+
+Unofficial community projects by Beau Nelford. They are not official FOCUS, FinOps Foundation, or Linux Foundation publications.
+
+| Repo | Site | What it is |
+|---|---|---|
+| [focus-ecosystem](https://github.com/beau-finopsorg/focus-ecosystem) (this repo) | [Pages](https://beau-finopsorg.github.io/focus-ecosystem/) | This index, plus the ecosystem landscape and data generator readiness landscape pages. |
+| [focus-gap-analyses](https://github.com/beau-finopsorg/focus-gap-analyses) | [Pages](https://beau-finopsorg.github.io/focus-gap-analyses/) | Readiness scorecard and gap analyses of 98 data generators, based on public documentation only. Ratings are not certification results. |
+| [focus-tools](https://github.com/beau-finopsorg/focus-tools) | [Pages](https://beau-finopsorg.github.io/focus-tools/) | Schema maps (FOCUS 1.0 through 1.5) and reference architectures. Version 1.5 is a candidate / pre-release. |
+
 ## Machine-readable registry
 
 [`registry/focus-ecosystem.yaml`](registry/focus-ecosystem.yaml) is the source of truth. This README is generated from it, so edit the YAML and run `python3 scripts/build_readme.py`. See [CONTRIBUTING.md](CONTRIBUTING.md).
@@ -199,6 +214,6 @@ The contents of this repo are under the MIT License. Linked projects keep their 
 
 Names and marks belong to their owners. This repo is not an official publication. See the [project policies](https://lfprojects.org) for marks that belong to their owners.
 
-This is a personal and community project by Beau Nelford, FOCUS Technical Community Architect, acting in a personal and community capacity. It is not an official FOCUS, FinOps Foundation, or Linux Foundation publication. It links to other work. It does not host or change the specification, and it does not certify or endorse anything it links to. For feedback on the specification itself, use https://focus.finops.org/feedback/.
+This is a personal and community project by Beau Nelford, FOCUS Technical Community Architect, acting in a personal and community capacity. It is not an official FOCUS, FinOps Foundation, or Linux Foundation publication. It links to other work and hosts unofficial community landscape pages. It does not host or change the specification, and it does not certify or endorse anything it links to. For feedback on the specification itself, use https://focus.finops.org/feedback/.
 
 See [DISCLAIMER.md](DISCLAIMER.md).
