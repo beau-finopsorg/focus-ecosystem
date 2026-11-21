@@ -2,6 +2,7 @@
 # FOCUS Ecosystem
 
 [![Link check](https://github.com/beau-finopsorg/focus-ecosystem/actions/workflows/link-check.yml/badge.svg)](https://github.com/beau-finopsorg/focus-ecosystem/actions/workflows/link-check.yml)
+[![Link freshness](https://github.com/beau-finopsorg/focus-ecosystem/actions/workflows/freshness.yml/badge.svg)](https://github.com/beau-finopsorg/focus-ecosystem/actions/workflows/freshness.yml)
 [![Spec freshness](https://github.com/beau-finopsorg/focus-ecosystem/actions/workflows/spec-version-watch.yml/badge.svg)](https://github.com/beau-finopsorg/focus-ecosystem/actions/workflows/spec-version-watch.yml)
 
 One index of everything around the FinOps Open Cost and Usage Specification (FOCUS): the spec, column and use case libraries, sandbox, validator, converters, tools, conformance program, and the data generators that publish FOCUS.
@@ -24,6 +25,12 @@ Latest spec release: **v1.4**. In progress: **v1.5**. Registry last verified: **
 
 ## Index
 
+**Updated** shows when the linked resource itself last changed, checked weekly (last check: **{{CHECKED}}**).
+
+🟢 within 90 days · 🟡 within a year · 🔴 over a year · ⚪ the source publishes no date and has not changed since tracking began
+
+Dates come from commit history, package releases, page metadata, or sitemaps. A date marked \* is when the weekly check first saw the page text change, so it is accurate to within a week.
+
 {{INDEX}}
 ## GitHub organizations
 
@@ -39,6 +46,7 @@ FOCUS work is split across two GitHub organizations.
 ## Keeping this current
 
 - A weekly workflow checks every link and opens an issue when one breaks.
+- A weekly workflow records when each linked resource last changed and opens a pull request with the dates.
 - Every pull request checks that this README matches the registry.
 - Open questions about coverage are tracked in [docs/backlog.md](docs/backlog.md).
 

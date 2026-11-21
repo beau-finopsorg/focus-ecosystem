@@ -1,0 +1,324 @@
+{
+  "checked": "2026-11-21",
+  "links": {
+    "https://developers.cloudflare.com/api/resources/billing/": {
+      "hash": "c546d12de4d8e5e8165f83df07d44fbb85668befd7e985f3009da44b8b71c5fb",
+      "source": "content-change",
+      "tracking_since": "2026-11-21"
+    },
+    "https://docs.aws.amazon.com/cur/latest/userguide/dataexports-create-standard.html": {
+      "hash": "d104898d41269ee1c3106076c14ce77b0f283739c3d24eba7434bd0b6dc11cb3",
+      "source": "content-change",
+      "tracking_since": "2026-11-21"
+    },
+    "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-focus-setup": {
+      "hash": "da6e80aea119cf9d71c46551a5f97c04538a2191f2ab827df6b61745017c74bc",
+      "source": "content-change",
+      "tracking_since": "2026-11-21"
+    },
+    "https://docs.coreweave.com/billing/focus-export-api": {
+      "hash": "b2cab720b613a2b95528f918a63aa79c42c9ecb07e0e8fc708c3a2ef3a1a40b7",
+      "source": "page-metadata",
+      "updated": "2026-11-09"
+    },
+    "https://docs.nebius.com/signup-billing/usage/export": {
+      "hash": "20a8af52f976d5d0d60293ed7222bdb566663d79c8e32ad1aa4fce5064dde88b",
+      "source": "page-metadata",
+      "updated": "2026-11-20"
+    },
+    "https://docs.oracle.com/iaas/Content/Billing/Tasks/accessingusagereports.htm": {
+      "hash": "d401dca11b0ae31d3cf16635be8fae598d8dd35d7ca6e9930b044f3a34cc8aaa",
+      "source": "content-change",
+      "tracking_since": "2026-11-21"
+    },
+    "https://docs.ovhcloud.com/en/guides/manage-and-operate/cost-center/export-billing-data-to-bucket": {
+      "hash": "8fddeea4163a33d46fd6b0be12dd751bd8ebb39afca4ca668982104d44b91cac",
+      "source": "content-change",
+      "tracking_since": "2026-11-21"
+    },
+    "https://docs.snowflake.com/en/sql-reference/billing/focus_cost_usage_v1_3": {
+      "hash": "2d3596fdbdeacbabb2f6c5cd6ed363a208b426cade7500161b61222cf8cbe704",
+      "source": "content-change",
+      "tracking_since": "2026-11-21"
+    },
+    "https://docs.stackit.cloud/platform/cost-and-billing/focus/": {
+      "hash": "1cf7cd81790623ddb5c90d8e05b8c2130d177f7335d657ccd9aacfebe565944f",
+      "source": "content-change",
+      "tracking_since": "2026-11-21"
+    },
+    "https://focus.finops.org/": {
+      "hash": "930be06b596e34d20be7e269fe4ae7e513cff0a8707997e6a0fdce8ea198391b",
+      "source": "sitemap",
+      "updated": "2026-11-18"
+    },
+    "https://focus.finops.org/adoption/": {
+      "hash": "0bc7d27673738694a9a36e91224ae488a89b00af0042c0447dd90c9e1ad64edc",
+      "source": "sitemap",
+      "updated": "2026-08-17"
+    },
+    "https://focus.finops.org/adoption/finops-practitioners/": {
+      "hash": "9bfba541a16428a8f23acf7a21008a1c1a70267f4b09e5b054cf3d603e5dfcad",
+      "source": "sitemap",
+      "updated": "2025-12-05"
+    },
+    "https://focus.finops.org/adoption/finops-vendors/": {
+      "hash": "000e748b7063e697528a89921fb29f4833455e5ba2ced36a8bfd887b3906be88",
+      "source": "sitemap",
+      "updated": "2025-12-05"
+    },
+    "https://focus.finops.org/adoption/saas-vendors/": {
+      "hash": "000e748b7063e697528a89921fb29f4833455e5ba2ced36a8bfd887b3906be88",
+      "source": "sitemap",
+      "updated": "2025-12-05"
+    },
+    "https://focus.finops.org/certified-focus-program/": {
+      "hash": "71f4782e661258460fab86f88d84221ccb709c6025794a405df4aa7f0c691e46",
+      "source": "sitemap",
+      "updated": "2026-02-19"
+    },
+    "https://focus.finops.org/contribute/": {
+      "hash": "6d3c61e4d4e9b0d697b52ad35cd406e9484f8d4bc97fb979bf6782a2bdce1812",
+      "source": "sitemap",
+      "updated": "2026-04-10"
+    },
+    "https://focus.finops.org/docs/column-library/": {
+      "hash": "07d563ae130674d9b5c31d7efc9410d6493d55ea639790594baa69544e633305",
+      "source": "page-metadata",
+      "updated": "2026-07-31"
+    },
+    "https://focus.finops.org/docs/implementation/get-started/get-started-with-focus-datasets/": {
+      "hash": "7f297a8aa1db8daf009d873f90cfa872c8583648308a343cf626c84692d70b85",
+      "source": "page-metadata",
+      "updated": "2026-11-18"
+    },
+    "https://focus.finops.org/docs/specification/v0-5/": {
+      "hash": "5666de64d604befc73ffa7ca2da2f0035bcceff89749cd51f8b5013b12bd1c8d",
+      "source": "content-change",
+      "tracking_since": "2026-11-21"
+    },
+    "https://focus.finops.org/docs/specification/v1-0/": {
+      "hash": "9f3c1c711d2d32eb60e040caaf77d0d9c8035d9562f184ca50f0a59dc6278a08",
+      "source": "content-change",
+      "tracking_since": "2026-11-21"
+    },
+    "https://focus.finops.org/docs/specification/v1-1/": {
+      "hash": "af51a62a24ad5e7add66cad1baa263ea311991bbf97bf5f2f5d6a6313b4e9948",
+      "source": "content-change",
+      "tracking_since": "2026-11-21"
+    },
+    "https://focus.finops.org/docs/specification/v1-2/": {
+      "hash": "812bbd6182f1db572326803d2801f92f6ac99bb12e8fe7638df4c21b60ad6ca1",
+      "source": "content-change",
+      "tracking_since": "2026-11-21"
+    },
+    "https://focus.finops.org/docs/specification/v1-2/sections/use-case-library/": {
+      "hash": "317f5d8c76e3978a774230f7163c96dacd1dca341be00b0554a0bc31898a3e76",
+      "source": "content-change",
+      "tracking_since": "2026-11-21"
+    },
+    "https://focus.finops.org/docs/specification/v1-3/": {
+      "hash": "7ca3fb9f4a73a866b73cc73da010d7218952d980cc3983966ee77f2b7bb26fa8",
+      "source": "content-change",
+      "tracking_since": "2026-11-21"
+    },
+    "https://focus.finops.org/docs/specification/v1-4/": {
+      "hash": "62073a6276fc1c7023487a031e7309310ab89959ac0ea645676141801c615330",
+      "source": "content-change",
+      "tracking_since": "2026-11-21"
+    },
+    "https://focus.finops.org/docs/tools-assets/assets/data-model/": {
+      "hash": "dfc19ea447039307db6e4281214820dab4299cc4048aadbec67fa944a2750880",
+      "source": "page-metadata",
+      "updated": "2026-08-19"
+    },
+    "https://focus.finops.org/docs/tools-assets/assets/supporting-assets/": {
+      "hash": "63f1697dcd09d4e54dbf6fdef0cc39287c6b35379c06ae5788d2540df84c9bd0",
+      "source": "page-metadata",
+      "updated": "2026-07-31"
+    },
+    "https://focus.finops.org/docs/tools-assets/tools/focus-mcp-server/": {
+      "hash": "a1551c69234c36198d9b81942dd7bb1a95c0f97189bbad22223ab01a4ede4e36",
+      "source": "page-metadata",
+      "updated": "2026-07-31"
+    },
+    "https://focus.finops.org/docs/tools-assets/tools/focus-validator/": {
+      "hash": "a8cd9dc96388abfb93a2bee17f57091f9572276856daff37b5fabab113ac3785",
+      "source": "page-metadata",
+      "updated": "2026-07-31"
+    },
+    "https://focus.finops.org/docs/tools-assets/tools/query-sandbox/": {
+      "hash": "8110c78b90981e75a6b160bccead8a4149a6aa7c145c3ba0c27b23e0dc34d250",
+      "source": "page-metadata",
+      "updated": "2026-07-31"
+    },
+    "https://focus.finops.org/docs/use-cases/v1-4/allocate-multi-currency-charges-per-application-2/": {
+      "hash": "daf9f9d5537a3ecf921f7339fbdf02d1cbdf573e27f89f566b5e7b21e0edd7eb",
+      "source": "sitemap",
+      "updated": "2026-06-03"
+    },
+    "https://focus.finops.org/faqs/": {
+      "hash": "f3ee02e0a2e16745981d8e7b7d3aae0267563b828a2b9b638f33d327da61014c",
+      "source": "sitemap",
+      "updated": "2026-06-07"
+    },
+    "https://focus.finops.org/feedback/": {
+      "hash": "f5e722711e5e310a00d626f29425ed91135a68638f242850ce9d8df9df97f120",
+      "source": "sitemap",
+      "updated": "2025-12-05"
+    },
+    "https://focus.finops.org/focus-1-5-release-scope/": {
+      "hash": "f7a8cff50fb49e035b17e348f4fd5ce777d6cefcade3254a78e9330ad8ae9aab",
+      "source": "sitemap",
+      "updated": "2026-11-13"
+    },
+    "https://focus.finops.org/sandbox/": {
+      "hash": "8110c78b90981e75a6b160bccead8a4149a6aa7c145c3ba0c27b23e0dc34d250",
+      "source": "page-metadata",
+      "updated": "2026-07-31"
+    },
+    "https://focus.finops.org/technology-categories/": {
+      "hash": "54edae896192507b688883c962b2f7301c797f9d47667b6e9bed9abe88cf2966",
+      "source": "sitemap",
+      "updated": "2026-06-08"
+    },
+    "https://focus.finops.org/what-is-focus/": {
+      "hash": "78ed1e8886a1b36f97e8b9faae89952b3a2cdee2f871ede4b92980515aa8b1e6",
+      "source": "sitemap",
+      "updated": "2026-06-10"
+    },
+    "https://focus.finops.org/wp-content/uploads/2024/11/FOCUS-spec-v1_1.pdf": {
+      "hash": "c3fac0086f7645db80bab690569e6fccd99f93aefe3dbc72286549b0734bd65e",
+      "source": "http-header",
+      "updated": "2024-11-08"
+    },
+    "https://focus.finops.org/wp-content/uploads/2025/05/FOCUS-spec-v1_2.pdf": {
+      "hash": "de61be722336153782ae2ef44edd4d53282e839e902f8740717c53292d2401bf",
+      "source": "http-header",
+      "updated": "2025-05-30"
+    },
+    "https://focus.finops.org/wp-content/uploads/2025/12/FOCUS_spec-v1_3.pdf": {
+      "hash": "36a05b90e13e04ed99363fd30758e838372a9d47f84c7edc0301947f99a25588",
+      "source": "http-header",
+      "updated": "2025-12-09"
+    },
+    "https://github.com/FinOps-Open-Cost-and-Usage-Spec/EasyCLA": {
+      "source": "github",
+      "updated": "2025-06-24"
+    },
+    "https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS-Sample-Data": {
+      "source": "github",
+      "updated": "2024-12-10"
+    },
+    "https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_RM_Extraction": {
+      "source": "github",
+      "updated": "2026-11-02"
+    },
+    "https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec": {
+      "source": "github",
+      "updated": "2026-11-19"
+    },
+    "https://github.com/FinOps-Open-Cost-and-Usage-Spec/focus-otel-semconv": {
+      "source": "github",
+      "updated": "2026-07-25"
+    },
+    "https://github.com/FinOps-Open-Cost-and-Usage-Spec/focus_requirements_model_analyzer": {
+      "source": "github",
+      "updated": "2026-06-06"
+    },
+    "https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation": {
+      "source": "github",
+      "updated": "2026-10-22"
+    },
+    "https://github.com/databricks-solutions/cloud-infra-costs/tree/main/focus": {
+      "source": "github",
+      "updated": "2026-10-30"
+    },
+    "https://github.com/finopsfoundation/FOCUS_Mapping_Templates": {
+      "source": "github",
+      "updated": "2026-11-17"
+    },
+    "https://github.com/finopsfoundation/focus_converter_googlecloud": {
+      "source": "github",
+      "updated": "2023-06-18"
+    },
+    "https://github.com/finopsfoundation/focus_converter_oraclecloud": {
+      "source": "github",
+      "updated": "2023-07-12"
+    },
+    "https://github.com/finopsfoundation/focus_converters": {
+      "source": "github",
+      "updated": "2026-11-04"
+    },
+    "https://github.com/finopsfoundation/focus_scrub": {
+      "source": "github",
+      "updated": "2026-03-19"
+    },
+    "https://github.com/finopsfoundation/focus_validator": {
+      "source": "github",
+      "updated": "2026-08-05"
+    },
+    "https://grafana.com/docs/grafana-cloud/cost-management-and-billing/focus/": {
+      "hash": "021949854ce027652d1e2790e5f53fd73984181b1cff7c471d3138a597717cc1",
+      "source": "content-change",
+      "tracking_since": "2026-11-21"
+    },
+    "https://intl.cloud.tencent.com/document/product/555/67495": {
+      "hash": "a5ca8704031a8255ea3724db342bd7082a3dda1eab73ff7f4ef0152b6df8c469",
+      "source": "content-change",
+      "tracking_since": "2026-11-21"
+    },
+    "https://learn.microsoft.com/azure/cost-management-billing/costs/tutorial-export-acm-data": {
+      "hash": "b1ee0bfefbf07b472debf91b7de197b4e450bb738461832366bc905945888b82",
+      "source": "page-metadata",
+      "updated": "2025-06-26"
+    },
+    "https://pypi.org/project/focus-converter/": {
+      "source": "pypi",
+      "updated": "2024-06-06"
+    },
+    "https://pypi.org/project/focus-validator/": {
+      "source": "pypi",
+      "updated": "2026-08-05"
+    },
+    "https://redis.io/docs/latest/operate/rc/api/examples/generate-cost-report/": {
+      "hash": "a1c42e76522d8746a0e23ae48f05b38275ad9f27b683dcc05bf2a0f37a3fc3e6",
+      "source": "page-metadata",
+      "updated": "2026-09-25"
+    },
+    "https://support.huaweicloud.com/intl/en-us/usermanual-cost/costcenter_000002_03_07.html": {
+      "hash": "b41e87e6d76f5e65efc17c53f3d516fc72eaecd3c3b51677c3c2a0558c37f4c7",
+      "source": "content-change",
+      "tracking_since": "2026-11-21"
+    },
+    "https://vercel.com/docs/rest-api/billing/list-focus-billing-charges": {
+      "hash": "b439fbcf54705376804600f4f07e32da996c367154b5563a38b2655482ca69c5",
+      "source": "sitemap",
+      "updated": "2026-11-05"
+    },
+    "https://www.alibabacloud.com/help/en/user-center/user-guide/export-alibaba-cloud-standard-billing-focus": {
+      "hash": "2c3d531a35ea4266a05a87b3031dee81442f3cfc48ec1fe58eef8062a62568b3",
+      "source": "content-change",
+      "tracking_since": "2026-11-21"
+    },
+    "https://www.finops.org/certification-for-organizations/finops-certified-focus-conformant/": {
+      "hash": "4f436c9fba47b2fbf8d813bba0929c96bed534533014cbb59ecebb7ae3a04473",
+      "source": "sitemap",
+      "updated": "2026-09-01"
+    },
+    "https://www.finops.org/insights/focus-sandbox/": {
+      "hash": "c1bf55ef90df163962ec0e35d630bd858efee1885d5bec8459165a72fcdc5042",
+      "source": "page-metadata",
+      "updated": "2025-04-08"
+    },
+    "https://www.finops.org/topic/focus/": {
+      "hash": "18188d773cd142768b3eeb942f5ea973b8fe0b69a16ae62719f36c332f91bbde",
+      "source": "sitemap",
+      "updated": "2026-11-19"
+    },
+    "https://www.mongodb.com/products/updates/now-ga-mongodb-atlas-support-for-focus-v1-3-cost-and-usage-reports/": {
+      "hash": "360263b3c6dd7202c9f7aed6dedf3719d4c7290ba10d537781f9a632c08df9e9",
+      "source": "content-change",
+      "tracking_since": "2026-11-21"
+    }
+  }
+}

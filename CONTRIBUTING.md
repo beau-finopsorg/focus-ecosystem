@@ -7,6 +7,8 @@ Add or fix an entry by editing [`registry/focus-ecosystem.yaml`](registry/focus-
 3. Commit both the YAML and the regenerated `README.md`.
 4. Open a pull request. CI checks that the README matches the registry and that links resolve.
 
+`registry/freshness.json` is generated weekly by `scripts/check_freshness.py`. Do not edit it by hand. A new link shows as not dated until the next weekly run.
+
 ## Rules
 
 - Link to the canonical source, not a mirror or a blog post about it, unless the post is the only documentation.
