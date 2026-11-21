@@ -148,7 +148,7 @@ Where to ask questions and give feedback.
 
 | Name | Type | Description | Updated |
 |---|---|---|---|
-| [Give Feedback](https://focus.finops.org/feedback/) | community | GitHub issues, the | 🟡 2025-12-05 |
+| [Give Feedback](https://focus.finops.org/feedback/) | community | GitHub issues, the \#chat-focus Slack channel in the FinOps Foundation community, and FOCUS community calls. | 🟡 2025-12-05 |
 
 ### Data generators publishing FOCUS
 
@@ -193,10 +193,12 @@ FOCUS work is split across two GitHub organizations.
 - Every pull request checks that this README matches the registry.
 - Open questions about coverage are tracked in [docs/backlog.md](docs/backlog.md).
 
-## Trademarks
+## License and disclaimer
 
-The authoritative sources are the linked projects. FOCUS and related marks belong to their owners. See the [project policies](https://lfprojects.org).
+The contents of this repo are under the MIT License. Linked projects keep their own licenses. The FOCUS specification is published under CC BY 4.0.
 
-## License
+Names and marks belong to their owners. This repo is not an official publication. See the [project policies](https://lfprojects.org) for marks that belong to their owners.
 
-[MIT](LICENSE) for the contents of this repo. Linked projects carry their own licenses. The FOCUS specification is published under CC BY 4.0.
+This is a personal and community project by Beau Nelford, FOCUS Technical Community Architect, acting in a personal and community capacity. It is not an official FOCUS, FinOps Foundation, or Linux Foundation publication. It links to other work. It does not host or change the specification, and it does not certify or endorse anything it links to. For feedback on the specification itself, use https://focus.finops.org/feedback/.
+
+See [DISCLAIMER.md](DISCLAIMER.md).

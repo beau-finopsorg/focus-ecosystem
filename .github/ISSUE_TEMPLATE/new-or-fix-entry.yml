@@ -1,0 +1,85 @@
+name: Add or fix an entry
+description: Propose a new registry entry or a correction to an existing one.
+title: "[Entry] "
+labels: ["entry"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping. The README is generated. If you open a pull request, edit `registry/focus-ecosystem.yaml`, not `README.md`.
+        This repo is an unofficial community index. It does not host or endorse the work it links to.
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: The name of the entry, as its owner writes it.
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Canonical URL
+      description: The main, stable link. Avoid short links and tracking parameters.
+      placeholder: https://
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - spec
+        - columns
+        - usecases
+        - sandbox
+        - validator
+        - converters
+        - tooling
+        - conformance
+        - adoption
+        - community
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options:
+        - repo
+        - site
+        - tool
+        - doc
+        - program
+        - community
+        - package
+        - provider
+    validations:
+      required: true
+  - type: input
+    id: description
+    attributes:
+      label: One-sentence description
+      description: Plain and factual. No marketing language.
+    validations:
+      required: true
+  - type: input
+    id: owner
+    attributes:
+      label: Owner
+      description: Who maintains it (person, company, or group).
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it belongs here
+      description: For a fix, say what is wrong and what it should say instead.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: I opened this link myself and checked that it works and matches the description.
+          required: true

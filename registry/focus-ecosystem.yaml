@@ -493,7 +493,7 @@ entries:
     category: community
     kind: community
     url: https://focus.finops.org/feedback/
-    description: GitHub issues, the #chat-focus Slack channel in the FinOps Foundation community, and FOCUS community calls.
+    description: "GitHub issues, the #chat-focus Slack channel in the FinOps Foundation community, and FOCUS community calls."
     owner: FOCUS Project
     status: active
     verified: 2026-11-20

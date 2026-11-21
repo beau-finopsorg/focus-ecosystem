@@ -22,7 +22,7 @@ FRESHNESS = ROOT / "registry" / "freshness.json"
 
 
 def esc(text: str) -> str:
-    return str(text).replace("|", "\\|")
+    return str(text).replace("|", "\\|").replace("#", "\\#")
 
 
 def freshness_cell(record: dict | None, checked: str) -> str:
