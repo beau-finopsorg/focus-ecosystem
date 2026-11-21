@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FOCUS Ecosystem Landscape (unofficial)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --purple: #bd3bfd;
+    --purple-tint: #f3e8ff;
+    --green: #1fa382;
+    --dark: #2B3F50;
+    --text: rgba(0,0,0,.92);
+    --text-2: rgba(0,0,0,.72);
+    --text-3: rgba(0,0,0,.56);
+    --bd-1: rgba(0,0,0,.08);
+    --bd-2: rgba(0,0,0,.12);
+    --bd-3: rgba(0,0,0,.24);
+    --tint: rgba(0,0,0,.02);
+    --panel: #f9fafa;
+    --card-shadow: 0 1px 3px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.06);
+    --tile: 58px;     /* controlled by zoom slider */
+    --gap: 6px;
+  }
+
+  * { box-sizing: border-box; }
+  html { font-size: 16px; }
+  body {
+    margin: 0; font-family: "IBM Plex Sans", sans-serif; color: var(--text);
+    background: #fff; line-height: 1.5; -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- Unofficial banner, site nav ---------- */
+  .unofficial-banner { background: #fff8e8; border-bottom: 1px solid #e6d19a; color: var(--dark); font-size: .85rem; line-height: 1.5; }
+  .unofficial-banner p { max-width: 1440px; margin: 0 auto; padding: .65rem 1.25rem; }
+  .sitenav { border-bottom: 1px solid var(--bd-2); font-size: .85rem; background: #fff; }
+  .sitenav ul { list-style: none; max-width: 1440px; margin: 0 auto; padding: .5rem 1.25rem; display: flex; flex-wrap: wrap; gap: .25rem 1.1rem; }
+  .sitenav a { color: var(--dark); text-decoration: none; font-weight: 500; }
+  .sitenav a:hover { color: var(--purple); text-decoration: underline; }
+  .sitenav a[aria-current="page"] { color: var(--purple); font-weight: 600; }
+  .sitenav .home { font-weight: 700; }
+
+  /* ---------- Header ---------- */
+  header { background: var(--dark); color: #fff; padding: 1.5rem 1.25rem 1.35rem; border-bottom: 4px solid var(--purple); }
+  .header-inner { max-width: 1440px; margin: 0 auto; }
+  .brandrow { display: flex; align-items: center; gap: .8rem; margin-bottom: .7rem; }
+  .brandrow .wordmark { font-weight: 700; font-size: 1.2rem; letter-spacing: .02em; }
+  .brandrow .divider { width: 1px; height: 22px; background: rgba(255,255,255,.28); }
+  .brandrow .kicker { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.7); font-weight: 600; }
+  header h1 { font-size: 1.65rem; font-weight: 700; margin: 0 0 .35rem; letter-spacing: -.01em; }
+  header p.lede { font-size: .9rem; color: rgba(255,255,255,.82); max-width: 820px; margin: 0 0 .4rem; }
+  header p.lede:last-child { margin-bottom: 0; }
+  header p.lede a { color: #fff; }
+
+  /* ---------- Sticky control bar ---------- */
+  .bar { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--bd-2); }
+  .bar-inner { max-width: 1440px; margin: 0 auto; padding: .6rem 1.25rem; display: flex; flex-wrap: wrap; align-items: center; gap: .65rem 1rem; }
+
+  .search { position: relative; flex: 1 1 200px; min-width: 160px; max-width: 320px; }
+  .search input { width: 100%; padding: .42rem .7rem .42rem 2rem; border: 1px solid var(--bd-2); border-radius: 8px; font: inherit; font-size: .85rem; outline: none; }
+  .search input:focus { border-color: var(--purple); box-shadow: 0 0 0 3px var(--purple-tint); }
+  .search svg { position: absolute; left: .6rem; top: 50%; transform: translateY(-50%); width: 14px; height: 14px; opacity: .45; }
+
+  /* segmented view switch */
+  .seg { display: inline-flex; border: 1px solid var(--bd-2); border-radius: 8px; overflow: hidden; }
+  .seg button { font: inherit; font-size: .8rem; font-weight: 500; padding: .4rem .7rem; border: 0; background: #fff; color: var(--text-2); cursor: pointer; display: inline-flex; align-items: center; gap: .35rem; }
+  .seg button + button { border-left: 1px solid var(--bd-2); }
+  .seg button.active { background: var(--purple); color: #fff; }
+  .seg button svg { width: 13px; height: 13px; }
+
+  /* zoom */
+  .zoom { display: inline-flex; align-items: center; gap: .5rem; font-size: .8rem; color: var(--text-3); }
+  .zoom input[type=range] { width: 110px; accent-color: var(--purple); }
+
+  .toggle { display: inline-flex; align-items: center; gap: .5rem; cursor: pointer; user-select: none; font-size: .82rem; color: var(--text-2); }
+  .toggle input { position: absolute; opacity: 0; pointer-events: none; }
+  .switch { width: 34px; height: 20px; border-radius: 999px; background: var(--bd-3); position: relative; transition: background .18s; }
+  .switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: #fff; transition: transform .18s; }
+  .toggle input:checked + .switch { background: var(--purple); }
+  .toggle input:checked + .switch::after { transform: translateX(14px); }
+
+  .spacer { flex: 1; }
+  .counts { font-size: .8rem; color: var(--text-3); white-space: nowrap; }
+  .counts b { color: var(--dark); font-weight: 700; }
+
+  /* ---------- Board ---------- */
+  main { max-width: 1440px; margin: 0 auto; padding: 1.25rem 1.25rem 3rem; }
+
+  .group { margin-bottom: 1.5rem; }
+  .group-head { display: flex; align-items: center; gap: .55rem; margin: 0 0 .7rem; }
+  .group-head h2 { font-size: 1.05rem; font-weight: 700; margin: 0; color: var(--dark); }
+  .group-accent { width: 6px; height: 20px; border-radius: 3px; background: var(--purple); }
+  .role-pill { font-size: .66rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; padding: .15rem .5rem; border-radius: 999px; background: var(--purple-tint); color: var(--purple); }
+
+  /* info hover */
+  .info { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 17px; height: 17px; border-radius: 50%; border: 1px solid var(--bd-3); color: var(--text-3); font-size: 10px; font-weight: 700; cursor: help; font-family: "IBM Plex Mono", monospace; flex: none; }
+  .info .tip { position: absolute; top: 145%; left: 0; z-index: 60; width: 300px; max-width: 78vw; background: var(--dark); color: #fff; font-weight: 400; font-size: .8rem; line-height: 1.5; padding: .65rem .8rem; border-radius: 8px; box-shadow: 0 6px 22px rgba(0,0,0,.25); opacity: 0; visibility: hidden; transform: translateY(-4px); transition: all .15s; text-align: left; letter-spacing: 0; text-transform: none; }
+  .info .tip::before { content: ""; position: absolute; bottom: 100%; left: 6px; border: 6px solid transparent; border-bottom-color: var(--dark); }
+  .info:hover .tip, .info:focus .tip { opacity: 1; visibility: visible; transform: translateY(0); }
+
+  /* category card */
+  .cats { display: grid; grid-template-columns: repeat(auto-fill, minmax(clamp(180px, calc(var(--tile) * 3.4), 360px), 1fr)); gap: .8rem; align-items: start; }
+  .cat { border: 1px solid var(--bd-2); border-radius: 8px; background: var(--tint); box-shadow: var(--card-shadow); overflow: hidden; }
+  .cat-head { display: flex; align-items: center; gap: .45rem; padding: .5rem .65rem; background: #fff; border-bottom: 1px solid var(--bd-1); }
+  .cat-head h3 { font-size: .82rem; font-weight: 600; margin: 0; color: var(--text); flex: 1; }
+  .cat-head .count { font-size: .68rem; color: var(--text-3); font-family: "IBM Plex Mono", monospace; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(var(--tile), 1fr)); gap: var(--gap); padding: var(--gap); }
+
+  /* name tile */
+  .tile { position: relative; aspect-ratio: 1 / 1; background: #fff; border: 1px solid var(--bd-1); border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 6px; transition: transform .12s, box-shadow .12s, border-color .12s; }
+  .tile:hover { transform: translateY(-2px); box-shadow: var(--card-shadow); border-color: var(--bd-3); z-index: 5; }
+  .tile .name { font-size: .62rem; font-weight: 600; text-align: center; color: var(--text-2); line-height: 1.15; overflow-wrap: anywhere; hyphens: auto; padding: 0 2px; }
+  .tile .nametip { position: absolute; bottom: 108%; left: 50%; transform: translateX(-50%) translateY(4px); background: var(--dark); color: #fff; font-size: .72rem; white-space: nowrap; padding: .3rem .5rem; border-radius: 6px; opacity: 0; visibility: hidden; transition: all .12s; pointer-events: none; z-index: 20; box-shadow: 0 4px 14px rgba(0,0,0,.22); }
+  .tile .nametip b { display: block; font-weight: 600; }
+  .tile .nametip em { font-style: normal; color: var(--purple); font-size: .66rem; }
+  .tile:hover .nametip { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+
+  /* ---- two-tier status: adopters full-strength, tracking muted ---- */
+  .tier-head { display: flex; align-items: center; gap: .4rem; padding: .45rem .65rem .1rem; font-size: .6rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+  .tier-head.is-adopter { color: var(--green); }
+  .tier-head.is-tracking { color: var(--text-3); border-top: 1px dashed var(--bd-2); margin-top: .35rem; padding-top: .5rem; }
+  .tier-head .tier-n { font-family: "IBM Plex Mono", monospace; font-weight: 500; letter-spacing: 0; opacity: .75; }
+  .tile.adopter { border-color: var(--green); }
+  .tile.tracking { border-style: dashed; background: var(--tint); }
+  .tile.tracking .name { color: var(--text-3); }
+  /* version badge doubles as the certified mark */
+  .tile .vchip { position: absolute; top: -6px; right: -6px; height: 15px; min-width: 15px; padding: 0 3px; border-radius: 999px; background: var(--green); color: #fff; font-size: 7.5px; font-weight: 700; letter-spacing: .02em; display: flex; align-items: center; justify-content: center; border: 2px solid #fff; }
+  .tile .vchip.certified { background: var(--purple); font-size: 9px; padding: 0; width: 15px; }
+  .tile .nametip i { display: block; font-style: normal; color: rgba(255,255,255,.6); font-size: .64rem; }
+
+  /* tiles that link to a published gap analysis */
+  a.tile { text-decoration: none; color: inherit; cursor: pointer; }
+  .tile.haslink .linkdot { position: absolute; bottom: 3px; right: 4px; font-size: 9px; line-height: 1; color: var(--purple); font-weight: 700; opacity: .6; }
+  .tile.haslink:hover { border-color: var(--purple); }
+  .tile.haslink:hover .linkdot { opacity: 1; }
+
+  /* ---- Card view: bigger tiles + persistent names, no hover tip needed ---- */
+  body[data-view="card"] { --tile: 96px; }
+  body[data-view="card"] .tile { padding: 10px 8px 6px; }
+  body[data-view="card"] .tile .name { font-size: .72rem; }
+  body[data-view="card"] .tile .nametip { display: none; }
+  body[data-view="card"] .tiles { gap: 10px; padding: 10px; }
+
+  /* ---- Swimlane view: macro groups become horizontal flow lanes ---- */
+  body[data-view="swimlane"] .group { display: grid; grid-template-columns: 132px 1fr; gap: 0; margin-bottom: .9rem; border: 1px solid var(--bd-2); border-radius: 10px; overflow: hidden; box-shadow: var(--card-shadow); }
+  body[data-view="swimlane"] .group-head { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: .4rem; margin: 0; padding: .9rem .8rem; background: var(--dark); color: #fff; }
+  body[data-view="swimlane"] .group-head h2 { color: #fff; font-size: .95rem; }
+  body[data-view="swimlane"] .group-accent { display: none; }
+  body[data-view="swimlane"] .group-head .info { border-color: rgba(255,255,255,.4); color: rgba(255,255,255,.8); }
+  body[data-view="swimlane"] .lane-role { font-size: .62rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--purple); background: rgba(255,255,255,.12); padding: .2rem .45rem; border-radius: 999px; }
+  body[data-view="swimlane"] .cats { display: flex; flex-wrap: wrap; gap: 0; background: var(--tint); }
+  body[data-view="swimlane"] .cat { border: 0; border-right: 1px dashed var(--bd-2); border-radius: 0; background: transparent; box-shadow: none; flex: 1 1 220px; }
+  body[data-view="swimlane"] .cat-head { background: transparent; border-bottom: 1px solid var(--bd-1); }
+
+  .hidden { display: none !important; }
+
+  /* ---------- Footer ---------- */
+  footer { background: var(--panel); border-top: 1px solid var(--bd-1); padding: 1.5rem 1.25rem; font-size: .8rem; color: var(--text-3); }
+  .footer-inner { max-width: 1440px; margin: 0 auto; }
+  footer a { color: var(--purple); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .disclaimer { background: var(--purple-tint); border-radius: 8px; padding: .65rem .85rem; color: var(--dark); margin-bottom: .9rem; line-height: 1.5; }
+
+  @media (max-width: 1023px) {
+    body[data-view="swimlane"] .group { grid-template-columns: 110px 1fr; }
+  }
+  @media (max-width: 767px) {
+    html { font-size: 12px; }
+    .bar-inner { gap: .5rem .7rem; }
+    .zoom { display: none; }
+    body[data-view="swimlane"] .group { grid-template-columns: 1fr; }
+    body[data-view="swimlane"] .group-head { flex-direction: row; }
+  }
+</style>
+</head>
+<body data-view="card">
+<aside class="unofficial-banner" aria-label="Unofficial notice">
+  <p><strong>Unofficial community project</strong> by Beau Nelford, FOCUS Technical Community Architect, acting in a personal and community capacity. Not an official FOCUS, FinOps Foundation, or Linux Foundation publication. Adoption tags and linked gap analyses are a reading of public documentation, not a certification result. Official certification, where it exists, is labeled separately as FinOps Certified FOCUS Conformant.</p>
+</aside>
+<nav class="sitenav" aria-label="Site">
+  <ul>
+    <li><a class="home" href="index.html">FOCUS ecosystem</a></li>
+    <li><a href="focus-landscape.html" aria-current="page">Landscape</a></li>
+    <li><a href="FOCUS-Readiness-Landscape.html">Readiness landscape</a></li>
+    <li><a href="https://github.com/beau-finopsorg/focus-ecosystem">GitHub repo</a></li>
+  </ul>
+</nav>
+
+<header>
+  <div class="header-inner">
+    <div class="brandrow">
+      <span class="wordmark">FOCUS</span>
+      <span class="divider"></span>
+      <span class="kicker">Ecosystem Landscape</span>
+    </div>
+    <h1>The FOCUS Ecosystem</h1>
+    <p class="lede">The FinOps Open Cost and Usage Specification (FOCUS) normalizes billing datasets across AI, cloud, SaaS, data center, and other technology vendors. This landscape maps the data <strong>generators</strong> who produce FOCUS data and the <strong>consumers</strong> who put it to work.</p>
+    <p class="lede">Adoption data retrieved <strong>2026-09-08</strong>. The official adopter lists live on <a href="https://focus.finops.org" target="_blank" rel="noopener">focus.finops.org</a> and may have changed since that date.</p>
+  </div>
+</header>
+
+<div class="bar">
+  <div class="bar-inner">
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input id="search" type="search" placeholder="Search organizations…" autocomplete="off" aria-label="Search organizations" />
+    </div>
+
+    <div class="seg" id="viewSeg" role="group" aria-label="View mode">
+      <button data-view="grid" title="Compact grid">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Grid</button>
+      <button data-view="card" class="active" title="Names with room to read">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="4" width="8" height="10" rx="1"/><rect x="13" y="4" width="8" height="10" rx="1"/><rect x="3" y="16" width="18" height="4" rx="1"/></svg>Card</button>
+      <button data-view="swimlane" title="Data-flow lanes">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="4" width="18" height="4" rx="1"/><rect x="3" y="10" width="18" height="4" rx="1"/><rect x="3" y="16" width="18" height="4" rx="1"/></svg>Flow</button>
+    </div>
+
+    <label class="toggle">
+      <input type="checkbox" id="adoptersOnly" />
+      <span class="switch"></span>
+      <span>Adopters only</span>
+    </label>
+
+    <div class="zoom">
+      <span>−</span>
+      <input id="zoom" type="range" min="44" max="104" step="2" value="58" aria-label="Zoom" />
+      <span>+</span>
+    </div>
+
+    <div class="spacer"></div>
+    <div class="counts"><b id="cVis">0</b> shown · <b id="cVer">0</b> adopters · <b id="cCert">0</b> certified</div>
+  </div>
+</div>
+
+<main id="board"></main>
+
+<footer class="unofficial-footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <strong>Adoption status is sourced; category placement is editorial.</strong>
+      An <b>Adopters</b> badge means focus.finops.org listed that organization as having adopted FOCUS on the retrieval date, and the version shown is the latest version that page stated. Sources:
+      <a href="https://focus.finops.org/get-started/" target="_blank" rel="noopener">get-started</a> (17 providers, with the conformance table),
+      <a href="https://focus.finops.org/adoption/finops-vendors/" target="_blank" rel="noopener">adoption/finops-vendors</a> (24 tooling vendors, no versions published), and
+      <a href="https://focus.finops.org/adoption/saas-vendors/" target="_blank" rel="noopener">adoption/saas-vendors</a>. A &check; marks the two organizations with a published FinOps Certified FOCUS Conformant certificate: <b>AWS</b> and <b>Nebius</b>.
+      Everything in a <b>Tracking</b> tier is here as part of the billing-data landscape and is <b>not</b> claimed to support FOCUS.
+      Category placement and the tracking tier itself are editorial judgment, not the Foundation&rsquo;s.
+      Status retrieved <b>2026-09-08</b>. The official lists on focus.finops.org may have changed since then.
+      Tiles marked &#8599; link to an unofficial community gap analysis based on public documentation; see the
+      <a href="https://beau-finopsorg.github.io/focus-gap-analyses/" target="_blank" rel="noopener">readiness scorecard</a> for current ratings.
+    </div>
+    <p>Unofficial community project by Beau Nelford. Content licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Product names and marks belong to their owners. The specification is published at <a href="https://focus.finops.org">focus.finops.org</a>. Corrections are welcome by <a href="https://github.com/beau-finopsorg/focus-ecosystem/issues">issue</a> or <a href="https://github.com/beau-finopsorg/focus-ecosystem/pulls">pull request</a>.</p>
+  </div>
+</footer>
+
+<script>
+/* ============================================================ DATA ============================================================
+   Adoption status is sourced from focus.finops.org and nothing else:
+     a    = latest FOCUS version the site lists this org as supporting
+            (true = listed as an adopter with no version stated)
+            Providers:  focus.finops.org/get-started/        (17 orgs, version + conformance table)
+            FinOps:     focus.finops.org/adoption/finops-vendors/  (24 orgs, no versions published)
+            SaaS:       focus.finops.org/adoption/saas-vendors/    (3 orgs)
+     c    = FinOps Certified FOCUS Conformant (a certificate is published for it)
+     cgr  = a Conformance Gap Report is published for it
+   No `a` means the org is NOT listed on focus.finops.org as having adopted
+   FOCUS. Those sit in the "tracking" tier: they are here because they are
+   part of the billing-data landscape, not because they support FOCUS.
+   Retrieved 2026-09-08. The official lists may have changed since.
+============================================================================ */
+const SOURCED = "2026-09-08";
+const DATA = [
+  {
+    group: "Data Generators", role: "Generate",
+    tip: "Organizations that PRODUCE billing or usage data and emit it in the FOCUS format. Adopters are the 17 providers listed at focus.finops.org/get-started plus the SaaS vendors at /adoption/saas-vendors; everything in the tracking tier is a billing-data source that has not been listed as adopting FOCUS.",
+    cats: [
+      { name: "Hyperscalers", tip: "Global-scale public cloud providers offering compute, storage, and hundreds of managed services.", items: [
+        {n:"Amazon Web Services", d:"aws.amazon.com", a:"1.2", c:true, cgr:true},
+        {n:"Microsoft Azure", d:"azure.microsoft.com", a:"1.2", cgr:true},
+        {n:"Google Cloud", d:"cloud.google.com", a:"1.2", cgr:true},
+        {n:"Oracle Cloud", d:"oracle.com", a:"1.2"},
+        {n:"IBM Cloud", a:"1.2"},
+        {n:"Alibaba Cloud", d:"alibabacloud.com", a:"1.0", cgr:true},
+        {n:"Tencent Cloud", d:"tencent.com", a:"1.0", cgr:true},
+        {n:"Huawei Cloud", d:"huaweicloud.com", a:"1.0"},
+      ]},
+      { name: "Neoclouds", tip: "GPU-first and specialized infrastructure clouds serving AI/ML and high-performance compute workloads.", items: [
+        {n:"Nebius", d:"nebius.com", a:"1.2", c:true, cgr:true},
+        {n:"OVHcloud", d:"ovhcloud.com", a:"1.0"},
+        {n:"CoreWeave", d:"coreweave.com"},
+        {n:"Lambda", d:"lambdalabs.com"},
+        {n:"Crusoe", d:"crusoe.ai"},
+        {n:"Together AI", d:"together.ai"},
+        {n:"Vultr", d:"vultr.com"},
+        {n:"DigitalOcean", d:"digitalocean.com"},
+        {n:"Scaleway", d:"scaleway.com"},
+      ]},
+      { name: "Data Platforms", tip: "Cloud data warehouses, lakehouses, and managed data services that bill on consumption.", items: [
+        {n:"Snowflake", d:"snowflake.com", a:"1.3"},
+        {n:"MongoDB", d:"mongodb.com", a:"1.3"},
+        {n:"Databricks", d:"databricks.com", a:"1.3"},
+        {n:"Redis", d:"redis.io", a:"1.2"},
+        {n:"Confluent", d:"confluent.io"},
+        {n:"Elastic", d:"elastic.co"},
+      ]},
+      { name: "Pure SaaS", tip: "SaaS vendors whose subscription and usage billing can be normalized to FOCUS. SaaS sub-categories will expand over time.", items: [
+        {n:"Datadog", d:"datadoghq.com"},
+        {n:"GitHub", d:"github.com"},
+        {n:"Atlassian", d:"atlassian.com"},
+        {n:"Salesforce", d:"salesforce.com"},
+        {n:"Twilio", d:"twilio.com"},
+        {n:"Snyk", d:"snyk.io"},
+        {n:"Zoom", d:"zoom.us"},
+      ]},
+      { name: "AI model & API providers", tip: "Foundation-model and AI API vendors that bill on tokens or usage. No AI provider was listed on focus.finops.org as publishing FOCUS data on the retrieval date.", items: [
+        {n:"Anthropic", d:"anthropic.com"},
+        {n:"OpenAI", d:"openai.com"},
+        {n:"Extend", d:"extend.ai"},
+        {n:"HappyRobot", d:"happyrobot.ai"},
+      ]},
+      { name: "Specialized, regional & hybrid cloud", tip: "GPU, regional, and hybrid infrastructure providers beyond the hyperscalers.", items: [
+        {n:"Cloudflare", d:"cloudflare.com", a:"1.0"},
+        {n:"Exaion", d:"exaion.com"},
+        {n:"RunPod", d:"runpod.io"},
+        {n:"Vast.ai", d:"vast.ai"},
+        {n:"Linode", d:"linode.com"},
+        {n:"Magalu", d:"magalu.cloud"},
+        {n:"HPE", d:"hpe.com"},
+        {n:"Dell APEX", d:"dell.com"},
+        {n:"STACKIT", d:"stackit.cloud"},
+        {n:"evroc", d:"evroc.com"},
+      ]},
+      { name: "Observability", tip: "Monitoring and observability platforms with usage-based billing.", items: [
+        {n:"Grafana Cloud", d:"grafana.com", a:"1.2"},
+        {n:"Dynatrace", d:"dynatrace.com"},
+        {n:"New Relic", d:"newrelic.com"},
+      ]},
+      { name: "DevOps & developer platforms", tip: "Source, CI/CD, artifact, and developer-platform vendors billing on usage or seats.", items: [
+        {n:"Vercel", d:"vercel.com", a:"1.3"},
+        {n:"GitLab", d:"gitlab.com"},
+        {n:"JFrog", d:"jfrog.com"},
+        {n:"Temporal", d:"temporal.io"},
+      ]},
+      { name: "Enterprise & business SaaS", tip: "Enterprise application and software-license vendors mapping subscription billing to FOCUS. Microsoft 365 FOCUS data reaches only customers on a Microsoft Customer Agreement, inside the Azure FOCUS export.", items: [
+        {n:"Microsoft 365", d:"microsoft.com", a:true},
+        {n:"Adobe", d:"adobe.com"},
+        {n:"SAP", d:"sap.com"},
+        {n:"ServiceNow", d:"servicenow.com"},
+        {n:"Workday", d:"workday.com"},
+        {n:"VMware", d:"vmware.com"},
+        {n:"Nutanix", d:"nutanix.com"},
+      ]},
+    ]
+  },
+  {
+    group: "Hybrid Tooling", role: "Generate + Consume",
+    tip: "FinOps tooling vendors. The FinOps Foundation treats these as both generators and consumers: they consume billing data from technology vendors and generate billing data for their own customers. The Foundation defines four capability levels (Generate/Produce, Import, Export, and Use FOCUS Terminology) but publishes no per-vendor breakdown on the site, so an adopter badge here means \"listed as having adopted FOCUS\", not a specific capability.",
+    cats: [
+      { name: "FinOps platforms", tip: "Platforms that consume multi-vendor FOCUS data and, in some cases, re-emit normalized FOCUS exports downstream.", items: [
+        {n:"IBM Cloudability", a:true},
+        {n:"Tanzu CloudHealth", d:"cloudhealthtech.com", a:true},
+        {n:"Flexera", d:"flexera.com", a:true},
+        {n:"Spot by NetApp", a:true},
+        {n:"CloudZero", d:"cloudzero.com", a:true},
+        {n:"Vantage", d:"vantage.sh", a:true},
+        {n:"Vega Cloud", d:"vegacloud.io"},
+        {n:"Harness", d:"harness.io"},
+        {n:"Finout", d:"finout.io"},
+        {n:"Cast AI", d:"cast.ai"},
+      ]},
+      { name: "Converters & normalizers", tip: "Tools whose stated FOCUS capability is converting non-FOCUS billing datasets into the FOCUS format.", items: [
+        {n:"Exivity", d:"exivity.com", a:true},
+        {n:"Neos CloudVane", a:true},
+        {n:"YäRKEN", a:true},
+      ]},
+    ]
+  },
+  {
+    group: "Consumer Tools", role: "Consume",
+    tip: "Tools that INGEST FOCUS data to deliver FinOps outcomes: allocation, showback/chargeback, anomaly detection, optimization, and reporting. Adopters are drawn from focus.finops.org/adoption/finops-vendors; category placement is our reading of the Foundation's own one-line description of each vendor.",
+    cats: [
+      { name: "Cost Management & Allocation", tip: "Showback, chargeback, budgeting, and reporting built on normalized FOCUS data.", items: [
+        {n:"Ternary", d:"ternary.app", a:true},
+        {n:"Kion", d:"kion.io", a:true},
+        {n:"CloudBolt", d:"cloudbolt.io", a:true},
+        {n:"Datadog", d:"datadoghq.com", a:true},
+        {n:"Amnic", d:"amnic.com", a:true},
+        {n:"CoreStack", d:"corestack.io", a:true},
+        {n:"Cloudsaver", d:"cloudsaver.com", a:true},
+        {n:"OpenCost", d:"opencost.io", a:true},
+        {n:"Tangoe", d:"tangoe.com", a:true},
+        {n:"Txture.io", a:true},
+        {n:"CloudMonitor", a:true},
+        {n:"Envisor", a:true},
+        {n:"Surveil", a:true},
+        {n:"nOps", d:"nops.io"},
+        {n:"Yotascale", d:"yotascale.com"},
+        {n:"Pelanor", d:"pelanor.io"},
+      ]},
+      { name: "Optimization & Automation", tip: "Rate/usage optimization, commitment management, and automated rightsizing driven by FOCUS data.", items: [
+        {n:"PointFive", d:"pointfive.co", a:true},
+        {n:"Sedai", d:"sedai.io", a:true},
+        {n:"ProsperOps", d:"prosperops.com"},
+        {n:"Densify", d:"densify.com"},
+        {n:"Anodot", d:"anodot.com"},
+      ]},
+      { name: "Analytics & BI", tip: "General analytics and BI tools used to query and visualize FOCUS datasets. These are not FOCUS adopters and would not be expected to appear on the Foundation's adoption list.", items: [
+        {n:"Power BI", d:"powerbi.microsoft.com"},
+        {n:"Tableau", d:"tableau.com"},
+        {n:"Grafana", d:"grafana.com"},
+      ]},
+    ]
+  },
+];
+
+/* No remote logo service: tiles render the organization name, which is
+   always correct and costs the viewer no third-party request. The `d`
+   domain is kept in DATA as metadata only. */
+
+/* Organizations with a published community gap analysis -> report file.
+   Keys cover every scorecard name plus the names this landscape uses
+   (Amazon Web Services, Vast.ai, STACKIT, Extend, Tanzu CloudHealth).
+   "Grafana" (the BI tool) is deliberately not mapped: the Grafana report
+   covers Grafana Cloud billing. */
+const GAP = {
+  "IBM Cloud":"IBMCloud-FOCUS-Gap-Analysis.html", "CoreWeave":"CoreWeave-FOCUS-Gap-Analysis.html", "Lambda":"Lambda-FOCUS-Gap-Analysis.html", "Crusoe":"Crusoe-FOCUS-Gap-Analysis.html",
+  "Together AI":"TogetherAI-FOCUS-Gap-Analysis.html", "Vultr":"Vultr-FOCUS-Gap-Analysis.html", "Scaleway":"Scaleway-FOCUS-Gap-Analysis.html", "Confluent":"Confluent-FOCUS-Gap-Analysis.html",
+  "Datadog":"Datadog-FOCUS-Gap-Analysis.html", "GitHub":"GitHub-FOCUS-Gap-Analysis.html", "Atlassian":"Atlassian-FOCUS-Gap-Analysis.html", "Salesforce":"Salesforce-FOCUS-Gap-Analysis.html",
+  "Tanzu CloudHealth":"CloudHealth-FOCUS-Gap-Analysis.html", "Vantage":"Vantage-FOCUS-Gap-Analysis.html",
+  "Anthropic":"Anthropic-FOCUS-Gap-Analysis.html", "OpenAI":"OpenAI-FOCUS-Gap-Analysis.html", "Exaion":"Exaion-FOCUS-Gap-Analysis.html", "RunPod":"RunPod-FOCUS-Gap-Analysis.html",
+  "Vast.ai":"Vast-FOCUS-Gap-Analysis.html", "Linode":"Linode-FOCUS-Gap-Analysis.html", "Magalu":"magalu-FOCUS-Gap-Analysis.html", "HPE":"HPE-FOCUS-Gap-Analysis.html",
+  "Dynatrace":"Dynatrace-FOCUS-Gap-Analysis.html", "New Relic":"NewRelic-FOCUS-Gap-Analysis.html", "GitLab":"GitLab-FOCUS-Gap-Analysis.html", "JFrog":"JFrog-FOCUS-Gap-Analysis.html",
+  "Vercel":"Vercel-FOCUS-Gap-Analysis.html", "Temporal":"Temporal-FOCUS-Gap-Analysis.html", "Adobe":"Adobe-FOCUS-Gap-Analysis.html", "SAP":"SAP-FOCUS-Gap-Analysis.html",
+  "ServiceNow":"ServiceNow-FOCUS-Gap-Analysis.html", "Workday":"Workday-FOCUS-Gap-Analysis.html", "VMware":"VMware-FOCUS-Gap-Analysis.html", "Nutanix":"Nutanix-FOCUS-Gap-Analysis.html",
+  /* official certified / Supported rows */
+  "AWS":"AWS-FOCUS-Gap-Analysis.html", "Amazon Web Services":"AWS-FOCUS-Gap-Analysis.html", "Nebius":"Nebius-FOCUS-Gap-Analysis.html",
+  "Databricks":"Databricks-FOCUS-Gap-Analysis.html", "Oracle Cloud":"OracleCloud-FOCUS-Gap-Analysis.html", "Google Cloud":"GoogleCloud-FOCUS-Gap-Analysis.html",
+  "Grafana Cloud":"Grafana-FOCUS-Gap-Analysis.html", "Microsoft Azure":"MicrosoftAzure-FOCUS-Gap-Analysis.html", "Redis":"Redis-FOCUS-Gap-Analysis.html",
+  "Alibaba Cloud":"AlibabaCloud-FOCUS-Gap-Analysis.html", "Huawei Cloud":"HuaweiCloud-FOCUS-Gap-Analysis.html", "OVHcloud":"OVHcloud-FOCUS-Gap-Analysis.html",
+  "Tencent Cloud":"TencentCloud-FOCUS-Gap-Analysis.html",
+  /* community-rated rows */
+  "Microsoft Copilot":"MicrosoftCopilot-FOCUS-Gap-Analysis.html", "StackIt":"StackIt-FOCUS-Gap-Analysis.html", "STACKIT":"StackIt-FOCUS-Gap-Analysis.html",
+  "Naver Cloud":"NaverCloud-FOCUS-Gap-Analysis.html", "MongoDB":"MongoDB-FOCUS-Gap-Analysis.html", "Cloudflare":"Cloudflare-FOCUS-Gap-Analysis.html",
+  "Neo4j":"Neo4j-FOCUS-Gap-Analysis.html", "Cockroach Labs":"CockroachLabs-FOCUS-Gap-Analysis.html", "Elastic":"Elastic-FOCUS-Gap-Analysis.html",
+  "Kong":"Kong-FOCUS-Gap-Analysis.html", "Microsoft 365":"Microsoft365-FOCUS-Gap-Analysis.html", "Vast":"Vast-FOCUS-Gap-Analysis.html",
+  "DigitalOcean":"DigitalOcean-FOCUS-Gap-Analysis.html", "Gcore":"Gcore-FOCUS-Gap-Analysis.html", "Hyperstack":"Hyperstack-FOCUS-Gap-Analysis.html",
+  "Shadeform":"Shadeform-FOCUS-Gap-Analysis.html", "Prime Intellect":"PrimeIntellect-FOCUS-Gap-Analysis.html", "Cudo Compute":"CudoCompute-FOCUS-Gap-Analysis.html",
+  "Akash Network":"AkashNetwork-FOCUS-Gap-Analysis.html", "Aethir":"Aethir-FOCUS-Gap-Analysis.html", "Core42":"Core42-FOCUS-Gap-Analysis.html",
+  "Snowflake":"Snowflake-FOCUS-Gap-Analysis.html", "Dell APEX":"DellAPEX-FOCUS-Gap-Analysis.html", "ExtendAI":"ExtendAI-FOCUS-Gap-Analysis.html",
+  "Extend":"ExtendAI-FOCUS-Gap-Analysis.html", "CloudHealth":"CloudHealth-FOCUS-Gap-Analysis.html", "Nscale":"Nscale-FOCUS-Gap-Analysis.html",
+  "Fluidstack":"Fluidstack-FOCUS-Gap-Analysis.html", "Genesis Cloud":"GenesisCloud-FOCUS-Gap-Analysis.html", "Hyperbolic":"Hyperbolic-FOCUS-Gap-Analysis.html",
+  "Salad":"Salad-FOCUS-Gap-Analysis.html", "Ola Krutrim":"OlaKrutrim-FOCUS-Gap-Analysis.html", "Yotta":"Yotta-FOCUS-Gap-Analysis.html",
+  "Sakura Internet":"SakuraInternet-FOCUS-Gap-Analysis.html", "evroc":"Evroc-FOCUS-Gap-Analysis.html", "HappyRobot":"HappyRobot-FOCUS-Gap-Analysis.html",
+  "Docker":"Docker-FOCUS-Gap-Analysis.html", "Fastly":"Fastly-FOCUS-Gap-Analysis.html", "Harness":"Harness-FOCUS-Gap-Analysis.html",
+  "Heroku":"Heroku-FOCUS-Gap-Analysis.html", "NVIDIA":"NVIDIA-FOCUS-Gap-Analysis.html", "PlanetScale":"PlanetScale-FOCUS-Gap-Analysis.html",
+  "Pulumi":"Pulumi-FOCUS-Gap-Analysis.html", "Redpanda":"Redpanda-FOCUS-Gap-Analysis.html", "Snyk":"Snyk-FOCUS-Gap-Analysis.html",
+  "Splunk":"Splunk-FOCUS-Gap-Analysis.html", "Supabase":"Supabase-FOCUS-Gap-Analysis.html", "Twilio":"Twilio-FOCUS-Gap-Analysis.html",
+  "Zoom":"Zoom-FOCUS-Gap-Analysis.html", "Echo":"EchoAI-FOCUS-Gap-Analysis.html", "InfrOS":"InfrOS-FOCUS-Gap-Analysis.html",
+  "PerfectScale":"PerfectScale-FOCUS-Gap-Analysis.html", "Postman":"Postman-FOCUS-Gap-Analysis.html", "Sedai":"Sedai-FOCUS-Gap-Analysis.html",
+  "Tigris":"Tigris-FOCUS-Gap-Analysis.html", "Traversal":"Traversal-FOCUS-Gap-Analysis.html"
+};
+const gapHref = file => `https://beau-finopsorg.github.io/focus-gap-analyses/analyses/${file}`;
+
+/* An adopter carries `a` (the FOCUS version focus.finops.org lists, or true
+   when the site names it without a version). Everything else is tracking-tier
+   and is drawn muted, so the chart never implies support that is not published. */
+const isAdopter = i => !!i.a;
+const verLabel  = i => (i.a === true ? "FOCUS" : "v" + i.a);
+
+function statusLine(item) {
+  if (!isAdopter(item)) return "not listed as a FOCUS adopter";
+  const bits = [item.a === true ? "listed as a FOCUS adopter" : "publishes FOCUS " + verLabel(item)];
+  if (item.c)   bits.push("FinOps Certified FOCUS Conformant");
+  if (item.cgr) bits.push("conformance gap report published");
+  return bits.join(" · ");
+}
+
+function tile(item) {
+  const ad = isAdopter(item);
+  const cls = ad ? " adopter" : " tracking";
+  const badge = ad
+    ? `<span class="vchip${item.c ? " certified" : ""}" title="${statusLine(item)}">${
+        item.c ? "✓" : verLabel(item)}</span>`
+    : "";
+  const stem = GAP[item.n];
+  const body = `${badge}<span class="name">${item.n}</span>`;
+  const tip = `<span class="nametip"><b>${item.n}</b><em>${statusLine(item)}</em>${
+    stem ? `<i>View community gap analysis ↗</i>` : ""}</span>`;
+  const data = `data-adopter="${ad}" data-cert="${!!item.c}" data-name="${item.n.toLowerCase()}"`;
+  if (stem) {
+    return `<a class="tile haslink${cls}" href="${gapHref(stem)}" target="_blank" rel="noopener" ${data}>
+    ${body}<span class="linkdot" aria-hidden="true">↗</span>${tip}
+  </a>`;
+  }
+  return `<div class="tile${cls}" ${data}>${body}${tip}</div>`;
+}
+
+/* Version order for the adopter tier: newest spec first, then certified, then name. */
+const VORDER = i => (i.a === true ? 0 : parseFloat(i.a) || 0);
+function sortItems(items) {
+  return [...items].sort((x, y) =>
+    (VORDER(y) - VORDER(x)) || ((y.c ? 1 : 0) - (x.c ? 1 : 0)) || x.n.localeCompare(y.n));
+}
+
+function render() {
+  const board = document.getElementById("board");
+  board.innerHTML = DATA.map(g => {
+    const cats = g.cats.map(c => {
+      const ad = sortItems(c.items.filter(isAdopter));
+      const tr = [...c.items.filter(i => !isAdopter(i))].sort((x, y) => x.n.localeCompare(y.n));
+      const tier = (label, list, mod) => list.length
+        ? `<div class="tier-head ${mod}">${label}<span class="tier-n">${list.length}</span></div>
+           <div class="tiles">${list.map(tile).join("")}</div>`
+        : "";
+      return `<div class="cat">
+        <div class="cat-head">
+          <h3>${c.name}</h3>
+          <span class="count">${ad.length}/${c.items.length}</span>
+          <span class="info" tabindex="0">i<span class="tip">${c.tip}</span></span>
+        </div>
+        ${tier("Adopters", ad, "is-adopter")}
+        ${tier("Tracking: not listed as adopting FOCUS", tr, "is-tracking")}
+      </div>`;
+    }).join("");
+    return `<section class="group">
+      <div class="group-head">
+        <span class="group-accent"></span>
+        <h2>${g.group}</h2>
+        <span class="lane-role">${g.role}</span>
+        <span class="info" tabindex="0">i<span class="tip">${g.tip}</span></span>
+      </div>
+      <div class="cats">${cats}</div>
+    </section>`;
+  }).join("");
+}
+
+render();
+
+/* ---- counts ---- */
+function updateCounts() {
+  const vis = [...document.querySelectorAll(".tile")].filter(t => !t.classList.contains("hidden"));
+  document.getElementById("cVis").textContent = vis.length;
+  document.getElementById("cVer").textContent = vis.filter(t => t.dataset.adopter === "true").length;
+  document.getElementById("cCert").textContent = vis.filter(t => t.dataset.cert === "true").length;
+}
+
+/* ---- filtering (search + adopters only) ---- */
+function applyFilter() {
+  const q = document.getElementById("search").value.trim().toLowerCase();
+  const aOnly = document.getElementById("adoptersOnly").checked;
+  document.querySelectorAll(".tile").forEach(t => {
+    const matchQ = !q || t.dataset.name.includes(q);
+    const matchA = !aOnly || t.dataset.adopter === "true";
+    t.classList.toggle("hidden", !(matchQ && matchA));
+  });
+  /* A tier label is meaningless once every tile under it is filtered out. */
+  document.querySelectorAll(".tiles").forEach(row => {
+    const any = [...row.querySelectorAll(".tile")].some(t => !t.classList.contains("hidden"));
+    row.classList.toggle("hidden", !any);
+    const head = row.previousElementSibling;
+    if (head && head.classList.contains("tier-head")) head.classList.toggle("hidden", !any);
+  });
+  document.querySelectorAll(".cat").forEach(c => {
+    const any = [...c.querySelectorAll(".tile")].some(t => !t.classList.contains("hidden"));
+    c.classList.toggle("hidden", !any);
+  });
+  document.querySelectorAll(".group").forEach(g => {
+    const any = [...g.querySelectorAll(".cat")].some(c => !c.classList.contains("hidden"));
+    g.classList.toggle("hidden", !any);
+  });
+  updateCounts();
+}
+
+document.getElementById("search").addEventListener("input", applyFilter);
+document.getElementById("adoptersOnly").addEventListener("change", applyFilter);
+
+/* ---- view switch ---- */
+document.getElementById("viewSeg").addEventListener("click", e => {
+  const btn = e.target.closest("button"); if (!btn) return;
+  document.body.dataset.view = btn.dataset.view;
+  document.querySelectorAll("#viewSeg button").forEach(b => b.classList.toggle("active", b === btn));
+});
+
+/* ---- zoom ---- */
+const zoom = document.getElementById("zoom");
+zoom.addEventListener("input", () => {
+  document.documentElement.style.setProperty("--tile", zoom.value + "px");
+});
+
+updateCounts();
+</script>
+</body>
+</html>

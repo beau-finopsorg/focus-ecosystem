@@ -339,6 +339,26 @@ entries:
     status: active
     verified: 2026-11-20
 
+  # ---- Other Tools (community) ----
+  - id: "repo-focus-tools"
+    name: "focus-tools"
+    category: "tooling"
+    kind: "repo"
+    url: "https://github.com/beau-finopsorg/focus-tools"
+    description: "Unofficial community schema maps (FOCUS 1.0 through 1.5) and reference architectures. Version 1.5 is a candidate / pre-release."
+    owner: "Beau Nelford (community)"
+    status: "active"
+    verified: "2026-11-20"
+  - id: "site-focus-tools"
+    name: "focus-tools (pages)"
+    category: "tooling"
+    kind: "site"
+    url: "https://beau-finopsorg.github.io/focus-tools/"
+    description: "Published site for the unofficial community schema maps and reference architectures."
+    owner: "Beau Nelford (community)"
+    status: "active"
+    verified: "2026-11-20"
+
   # ---- Conformance and governance ----
   - id: certified-program
     name: Certified FOCUS Conformance Program
@@ -486,6 +506,35 @@ entries:
     owner: FinOps Foundation
     status: active
     verified: 2026-11-20
+
+  # ---- Adoption and Guides (community) ----
+  - id: "repo-focus-gap-analyses"
+    name: "focus-gap-analyses"
+    category: "adoption"
+    kind: "repo"
+    url: "https://github.com/beau-finopsorg/focus-gap-analyses"
+    description: "Unofficial community gap analyses of 98 data generators, based on public documentation only. Ratings are not certification results."
+    owner: "Beau Nelford (community)"
+    status: "active"
+    verified: "2026-11-20"
+  - id: "site-focus-gap-analyses"
+    name: "focus-gap-analyses (pages)"
+    category: "adoption"
+    kind: "site"
+    url: "https://beau-finopsorg.github.io/focus-gap-analyses/"
+    description: "Readiness scorecard, by-company index, and HTML copies of the 98 unofficial community gap analyses."
+    owner: "Beau Nelford (community)"
+    status: "active"
+    verified: "2026-11-20"
+  - id: "site-focus-ecosystem-pages"
+    name: "focus-ecosystem (pages)"
+    category: "adoption"
+    kind: "site"
+    url: "https://beau-finopsorg.github.io/focus-ecosystem/"
+    description: "Unofficial community landscape pages: the FOCUS ecosystem landscape (adoption data retrieved 2026-09-08) and the data generator readiness landscape. Ratings are not certification results."
+    owner: "Beau Nelford (community)"
+    status: "active"
+    verified: "2026-11-20"
 
   # ---- Community ----
   - id: feedback

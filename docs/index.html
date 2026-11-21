@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FOCUS ecosystem (unofficial community site)</title>
+<meta name="description" content="Unofficial community landscape views of the FinOps Open Cost and Usage Specification (FOCUS) ecosystem.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--dark:#2B3F50;--accent:#bd3bfd;--text:rgba(0,0,0,.92);--text-2:rgba(0,0,0,.66);--bd:rgba(0,0,0,.12);}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:"IBM Plex Sans",sans-serif;color:var(--text);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);}
+  .unofficial-banner{background:#fff8e8;border-bottom:1px solid #e6d19a;color:var(--dark);font-size:.85rem;line-height:1.5;}
+  .unofficial-banner p{max-width:960px;margin:0 auto;padding:.65rem 1.25rem;}
+  .sitenav{border-bottom:1px solid var(--bd);font-size:.85rem;}
+  .sitenav ul{list-style:none;max-width:960px;margin:0 auto;padding:.5rem 1.25rem;display:flex;flex-wrap:wrap;gap:.25rem 1.1rem;}
+  .sitenav a{color:var(--dark);text-decoration:none;font-weight:500;}
+  .sitenav a:hover{color:var(--accent);text-decoration:underline;}
+  .sitenav a[aria-current="page"]{color:var(--accent);font-weight:600;}
+  .sitenav .home{font-weight:700;}
+  main{max-width:960px;margin:0 auto;padding:2.5rem 1.25rem 3rem;}
+  h1{font-size:2rem;font-weight:700;color:var(--dark);margin:0 0 .6rem;}
+  .lede{font-size:1.05rem;color:var(--text-2);max-width:720px;margin:0 0 2rem;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-bottom:2.5rem;}
+  .card{display:block;border:1px solid var(--bd);border-radius:10px;padding:1.2rem 1.3rem;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,.08);transition:border-color .12s,transform .12s;}
+  .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+  .card h2{font-size:1.15rem;margin:0 0 .4rem;color:var(--dark);}
+  .card p{margin:0;font-size:.92rem;color:var(--text-2);}
+  .card .go{display:inline-block;margin-top:.7rem;font-size:.85rem;font-weight:600;color:var(--accent);}
+  h3{font-size:1rem;color:var(--dark);margin:0 0 .5rem;}
+  ul.links{margin:0 0 1.5rem;padding-left:1.2rem;}
+  ul.links li{margin-bottom:.3rem;}
+  .unofficial-footer{border-top:1px solid var(--bd);background:#f9fafa;color:var(--text-2);font-size:.8rem;}
+  .unofficial-footer p{max-width:960px;margin:0 auto;padding:1.25rem;}
+</style>
+</head>
+<body>
+<aside class="unofficial-banner" aria-label="Unofficial notice">
+  <p><strong>Unofficial community project</strong> by Beau Nelford, FOCUS Technical Community Architect, acting in a personal and community capacity. Not an official FOCUS, FinOps Foundation, or Linux Foundation publication.</p>
+</aside>
+<nav class="sitenav" aria-label="Site">
+  <ul>
+    <li><a class="home" href="index.html" aria-current="page">FOCUS ecosystem</a></li>
+    <li><a href="focus-landscape.html">Landscape</a></li>
+    <li><a href="FOCUS-Readiness-Landscape.html">Readiness landscape</a></li>
+    <li><a href="https://github.com/beau-finopsorg/focus-ecosystem">GitHub repo</a></li>
+  </ul>
+</nav>
+<main>
+  <h1>FOCUS ecosystem</h1>
+  <p class="lede">This is the site for the focus-ecosystem community index. The YAML index of specification resources, tools, and programs lives in the <a href="https://github.com/beau-finopsorg/focus-ecosystem">GitHub repo</a>. The pages here are unofficial landscape views of the FinOps Open Cost and Usage Specification (FOCUS) ecosystem. The specification itself is at <a href="https://focus.finops.org">focus.finops.org</a>.</p>
+
+  <div class="cards">
+    <a class="card" href="focus-landscape.html">
+      <h2>Ecosystem landscape</h2>
+      <p>Data generators, hybrid tooling, and consumer tools, with adoption status sourced from focus.finops.org. Adoption data retrieved 2026-09-08.</p>
+      <span class="go">Open the landscape</span>
+    </a>
+    <a class="card" href="FOCUS-Readiness-Landscape.html">
+      <h2>Readiness landscape</h2>
+      <p>The data generator landscape, shaded by the published readiness levels: official certification and Supported status, plus community readings of public documentation.</p>
+      <span class="go">Open the readiness landscape</span>
+    </a>
+  </div>
+
+  <h3>Related unofficial community sites</h3>
+  <ul class="links">
+    <li><a href="https://beau-finopsorg.github.io/focus-gap-analyses/">focus-gap-analyses</a>: readiness scorecard and community gap analyses of data generators.</li>
+    <li><a href="https://beau-finopsorg.github.io/focus-tools/">focus-tools</a>: community schema maps and reference architectures.</li>
+    <li><a href="https://github.com/beau-finopsorg/focus-ecosystem">focus-ecosystem on GitHub</a>: the YAML index and the source for these pages.</li>
+  </ul>
+</main>
+<footer class="unofficial-footer">
+  <p>Unofficial community project. Content licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Product names and marks belong to their owners. The specification is published at <a href="https://focus.finops.org">focus.finops.org</a>. Corrections are welcome by <a href="https://github.com/beau-finopsorg/focus-ecosystem/issues">issue</a> or <a href="https://github.com/beau-finopsorg/focus-ecosystem/pulls">pull request</a>.</p>
+</footer>
+</body>
+</html>

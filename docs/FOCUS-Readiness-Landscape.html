@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FOCUS Data Generator Readiness Landscape (unofficial)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --focus-purple:#bd3bfd;--focus-dark:#2B3F50;
+    --partial:rgba(31,163,130,.20);--partial-b:#0f5c47;
+    --notyet:rgba(245,166,35,.14);--notyet-b:#7a4f00;
+    --cert:#2B3F50;
+    --text-body:rgba(0,0,0,.92);--text-secondary:rgba(0,0,0,.66);--text-muted:rgba(0,0,0,.5);
+    --border-subtle:rgba(0,0,0,.08);--border:rgba(0,0,0,.12);
+    --bg:#fff;--bg-tint:#f7f8fa;
+    --font-sans:"IBM Plex Sans",sans-serif;--radius:8px;--pill:9999px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:var(--font-sans);color:var(--text-body);background:var(--bg);line-height:1.55;font-size:16px;-webkit-font-smoothing:antialiased;}
+  a{color:var(--focus-purple);}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 2rem;}
+  .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+  .unofficial-banner{background:#fff8e8;border-bottom:1px solid #e6d19a;color:var(--focus-dark);font-size:.85rem;line-height:1.5;}
+  .unofficial-banner p{max-width:1100px;margin:0 auto;padding:.65rem 2rem;}
+  .sitenav{border-bottom:1px solid var(--border);font-size:.85rem;}
+  .sitenav ul{list-style:none;max-width:1100px;margin:0 auto;padding:.5rem 2rem;display:flex;flex-wrap:wrap;gap:.25rem 1.1rem;}
+  .sitenav a{color:var(--focus-dark);text-decoration:none;font-weight:500;}
+  .sitenav a:hover{color:var(--focus-purple);text-decoration:underline;}
+  .sitenav a[aria-current="page"]{color:var(--focus-purple);font-weight:600;}
+  .sitenav .home{font-weight:700;}
+  .hero{background:var(--focus-dark);color:#fff;padding:2.6rem 0 2.3rem;}
+  .eyebrow{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#fff;background:var(--focus-purple);border-radius:var(--pill);padding:.35rem .9rem;margin-bottom:1rem;}
+  .hero h1{font-size:2.1rem;font-weight:700;line-height:1.15;margin-bottom:.8rem;}
+  .hero p{font-size:1.05rem;color:rgba(255,255,255,.82);max-width:780px;margin:0 0 .6rem;}
+  .hero p:last-child{margin-bottom:0;}
+  .hero a{color:#fff;}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;padding:1.3rem 0 .2rem;font-size:.85rem;color:var(--text-secondary);}
+  .legend span{display:inline-flex;align-items:center;gap:7px;}
+  .sw{width:14px;height:14px;border-radius:4px;display:inline-block;border:1px solid var(--border);}
+  section{padding:1.6rem 0;border-bottom:1px solid var(--border-subtle);}
+  h2{font-size:1.15rem;font-weight:600;margin-bottom:.2rem;}
+  .sub{font-size:.85rem;color:var(--text-muted);margin-bottom:.8rem;}
+  .grid{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{border-radius:var(--radius);padding:7px 12px;font-size:.85rem;font-weight:500;border:1px solid var(--border);line-height:1.2;}
+  a.chip{text-decoration:none;transition:transform .12s,box-shadow .12s;}
+  a.chip:hover,a.chip:focus{transform:translateY(-1px);box-shadow:0 2px 6px rgba(0,0,0,.14);}
+  .chip small{display:block;font-size:.7rem;font-weight:400;color:var(--text-muted);margin-top:1px;}
+  .partial{background:var(--partial);color:var(--partial-b);}
+  .notyet{background:var(--notyet);color:var(--notyet-b);}
+  .cert{background:var(--cert);color:#fff;border-color:var(--cert);}
+  .cert small{color:rgba(255,255,255,.75);}
+  .sup{background:#fff;color:var(--cert);border:1px solid var(--cert);}
+  .note{font-size:.85rem;color:var(--text-secondary);padding:1.3rem 0 0;}
+  footer{background:var(--focus-dark);color:rgba(255,255,255,.78);padding:2rem 0;font-size:.8125rem;}
+  footer p + p{margin-top:.8rem;}
+  footer a{color:#fff;text-decoration:underline;} footer strong{color:#fff;}
+  @media (max-width:720px){.wrap,.unofficial-banner p,.sitenav ul{padding-left:1.1rem;padding-right:1.1rem;}.hero h1{font-size:1.6rem;}}
+</style>
+</head>
+<body>
+<aside class="unofficial-banner" aria-label="Unofficial notice">
+  <p><strong>Unofficial community project</strong> by Beau Nelford, FOCUS Technical Community Architect, acting in a personal and community capacity. Not an official FOCUS, FinOps Foundation, or Linux Foundation publication. Community ratings shown here are a reading of public documentation, not a certification result. Official certification, where it exists, is labeled separately as FinOps Certified FOCUS Conformant.</p>
+</aside>
+<nav class="sitenav" aria-label="Site">
+  <ul>
+    <li><a class="home" href="index.html">FOCUS ecosystem</a></li>
+    <li><a href="focus-landscape.html">Landscape</a></li>
+    <li><a href="FOCUS-Readiness-Landscape.html" aria-current="page">Readiness landscape</a></li>
+    <li><a href="https://github.com/beau-finopsorg/focus-ecosystem">GitHub repo</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">FOCUS data generator landscape</span>
+    <h1>The provider landscape, shaded by FOCUS readiness</h1>
+    <p>The 98 data generators covered by the community gap analyses, grouped by category and shaded by the published readiness levels. There are 100 chips because Linode and Kong each appear twice, once per billing surface. Each chip links to its gap analysis.</p>
+    <p>For dimension-level detail and the latest ratings, see the <a href="https://beau-finopsorg.github.io/focus-gap-analyses/">readiness scorecard</a> and the <a href="https://beau-finopsorg.github.io/focus-gap-analyses/by-company.html">by-company index</a>.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="legend" role="list" aria-label="Legend">
+    <span role="listitem"><span class="sw cert"></span>FinOps Certified FOCUS Conformant (official)</span>
+    <span role="listitem"><span class="sw sup"></span>Supported (official: gave the Foundation a FOCUS export)</span>
+    <span role="listitem"><span class="sw partial"></span>Partially aligned (community)</span>
+    <span role="listitem"><span class="sw notyet"></span>Not yet aligned (per public docs) (community)</span>
+  </div>
+  <p class="note">Official labels come from the FinOps Foundation via <a href="https://focus.finops.org/get-started/">focus.finops.org/get-started</a>. Community labels are a reading of each vendor&rsquo;s public documentation. Category placement is editorial.</p>
+</div>
+
+<section><div class="wrap">
+  <h2>FinOps Certified FOCUS Conformant and Supported data generators</h2>
+  <div class="sub">Official statuses, not community ratings. AWS and Nebius are FinOps Certified FOCUS Conformant (solid). The other 11 are Supported, meaning they have given the Foundation a FOCUS export (outlined); the tag is the latest FOCUS version each ships. Check focus.finops.org for the current list.</div>
+  <div class="grid">
+    <a class="chip cert" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/AWS-FOCUS-Gap-Analysis.html">AWS<small>FinOps Certified FOCUS Conformant, v1.2</small></a>
+    <a class="chip cert" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Nebius-FOCUS-Gap-Analysis.html">Nebius<small>FinOps Certified FOCUS Conformant, v1.2</small></a>
+    <a class="chip sup" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Databricks-FOCUS-Gap-Analysis.html">Databricks<small>Supported, v1.3</small></a>
+    <a class="chip sup" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/OracleCloud-FOCUS-Gap-Analysis.html">Oracle Cloud<small>Supported, v1.3</small></a>
+    <a class="chip sup" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Vercel-FOCUS-Gap-Analysis.html">Vercel<small>Supported, v1.3</small></a>
+    <a class="chip sup" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/GoogleCloud-FOCUS-Gap-Analysis.html">Google Cloud<small>Supported, v1.2</small></a>
+    <a class="chip sup" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Grafana-FOCUS-Gap-Analysis.html">Grafana Cloud<small>Supported, v1.2</small></a>
+    <a class="chip sup" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/MicrosoftAzure-FOCUS-Gap-Analysis.html">Microsoft Azure<small>Supported, v1.2</small></a>
+    <a class="chip sup" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Redis-FOCUS-Gap-Analysis.html">Redis<small>Supported, v1.2</small></a>
+    <a class="chip sup" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/AlibabaCloud-FOCUS-Gap-Analysis.html">Alibaba Cloud<small>Supported, v1.0</small></a>
+    <a class="chip sup" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/HuaweiCloud-FOCUS-Gap-Analysis.html">Huawei Cloud<small>Supported, v1.0</small></a>
+    <a class="chip sup" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/OVHcloud-FOCUS-Gap-Analysis.html">OVHcloud<small>Supported, v1.0</small></a>
+    <a class="chip sup" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/TencentCloud-FOCUS-Gap-Analysis.html">Tencent Cloud<small>Supported, v1.0</small></a>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Neocloud giants</h2>
+  <div class="sub">The largest dedicated AI clouds.</div>
+  <div class="grid">
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/CoreWeave-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>CoreWeave</a>
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Crusoe-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>Crusoe</a>
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Lambda-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>Lambda</a>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>GPU and AI neoclouds</h2>
+  <div class="sub">Dedicated compute clouds. Most have the usage substance but need FOCUS shaping.</div>
+  <div class="grid">
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/IBMCloud-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>IBM Cloud<small>native FOCUS API</small></a>
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Linode-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>Linode<small>Akamai daily usage API</small></a>
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Scaleway-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>Scaleway</a>
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Vultr-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>Vultr</a>
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/magalu-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>Magalu</a>
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Exaion-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>Exaion</a>
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/RunPod-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>RunPod</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/DigitalOcean-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>DigitalOcean</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Fluidstack-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Fluidstack</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Gcore-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Gcore</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/GenesisCloud-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Genesis Cloud</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Hyperstack-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Hyperstack<small>NexGen Cloud</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Linode-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Linode<small>self-service v4 invoices</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Nscale-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Nscale</a>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>GPU brokers and marketplaces</h2>
+  <div class="sub">Aggregators reselling third-party capacity, including decentralized networks. Brokers rarely publish charge-level billing, and none here is yet aligned per public documentation.</div>
+  <div class="grid">
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Aethir-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Aethir<small>decentralized</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/AkashNetwork-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Akash Network<small>decentralized</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/CudoCompute-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Cudo Compute<small>closed Mar 2026</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Hyperbolic-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Hyperbolic</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/PrimeIntellect-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Prime Intellect</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Salad-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Salad</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Shadeform-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Shadeform</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Vast-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Vast.ai</a>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>AI models, APIs, and AI platforms</h2>
+  <div class="sub">Token-metered inference, model APIs, AI infrastructure, and AI applications.</div>
+  <div class="grid">
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Anthropic-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>Anthropic</a>
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/MicrosoftCopilot-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>Microsoft Copilot<small>metered, via Azure</small></a>
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/OpenAI-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>OpenAI</a>
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/TogetherAI-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>Together AI</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/ExtendAI-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>ExtendAI<small>document AI</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/HappyRobot-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>HappyRobot<small>AI voice agents</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/InfrOS-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>InfrOS<small>AI platform</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/NVIDIA-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>NVIDIA<small>AI infrastructure</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Traversal-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Traversal<small>AI SRE</small></a>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Developer platforms, edge, and DevOps</h2>
+  <div class="sub">Usage plus seat billing for developer tooling, PaaS, API, and edge platforms.</div>
+  <div class="grid">
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Cloudflare-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>Cloudflare</a>
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/GitHub-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>GitHub</a>
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Kong-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>Kong<small>AI Cost Management FOCUS export</small></a>
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Temporal-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>Temporal</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Atlassian-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Atlassian</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Docker-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Docker</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Fastly-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Fastly<small>edge platform</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/GitLab-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>GitLab</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Harness-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Harness</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Heroku-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Heroku<small>PaaS</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/JFrog-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>JFrog</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Kong-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Kong<small>Konnect own charges</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Postman-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Postman</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Pulumi-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Pulumi</a>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Data, databases, streaming, and observability</h2>
+  <div class="sub">Consumption-metered data platforms, databases, storage, and monitoring.</div>
+  <div class="grid">
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/CockroachLabs-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>Cockroach Labs</a>
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Confluent-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>Confluent</a>
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Datadog-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>Datadog</a>
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Dynatrace-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>Dynatrace</a>
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Elastic-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>Elastic</a>
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/MongoDB-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>MongoDB</a>
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Neo4j-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>Neo4j<small>Aura</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/NewRelic-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>New Relic</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/PlanetScale-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>PlanetScale</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Redpanda-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Redpanda</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Snowflake-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Snowflake</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Splunk-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Splunk</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Supabase-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Supabase</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Tigris-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Tigris<small>object storage</small></a>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Enterprise SaaS, software, and licenses</h2>
+  <div class="sub">Seat, subscription, and usage billing, mostly invoice or annual grained, including communications and security SaaS.</div>
+  <div class="grid">
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/HPE-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>HPE</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Adobe-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Adobe</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/DellAPEX-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Dell APEX</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/EchoAI-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Echo<small>security</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Microsoft365-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Microsoft 365<small>commerce billing</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Nutanix-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Nutanix</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Salesforce-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Salesforce</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/SAP-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>SAP</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/ServiceNow-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>ServiceNow</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Snyk-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Snyk<small>security</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Twilio-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Twilio<small>communications</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/VMware-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>VMware</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Workday-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Workday</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Zoom-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Zoom</a>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Sovereign and regional clouds</h2>
+  <div class="sub">National and regional AI clouds. Public billing documentation is often limited, so several ratings are provisional.</div>
+  <div class="grid">
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/NaverCloud-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>Naver Cloud<small>Korea</small></a>
+    <a class="chip partial" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/StackIt-FOCUS-Gap-Analysis.html"><span class="vh">Partially aligned: </span>STACKIT<small>Germany</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Core42-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Core42<small>UAE (G42)</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Evroc-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>evroc<small>Europe</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/OlaKrutrim-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Ola Krutrim<small>India</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/SakuraInternet-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Sakura Internet<small>Japan</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Yotta-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Yotta<small>India</small></a>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>FinOps and cloud optimization tools</h2>
+  <div class="sub">Cost-management and optimization vendors, assessed as data generators of their own billing.</div>
+  <div class="grid">
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/CloudHealth-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>CloudHealth</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/PerfectScale-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>PerfectScale<small>Kubernetes optimization</small></a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Sedai-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Sedai</a>
+    <a class="chip notyet" href="https://beau-finopsorg.github.io/focus-gap-analyses/analyses/Vantage-FOCUS-Gap-Analysis.html"><span class="vh">Not yet aligned (per public docs): </span>Vantage</a>
+  </div>
+</div></section>
+
+<footer class="unofficial-footer"><div class="wrap">
+  <p>100 chips covering 98 analyzed data generators. Official: 2 FinOps Certified FOCUS Conformant (AWS, Nebius) and 11 Supported, per <a href="https://focus.finops.org/get-started/">focus.finops.org/get-started</a>. Community readings of public documentation: 28 chips Partially aligned and 59 chips Not yet aligned (per public docs). Linode and Kong each appear twice, once per billing surface, and each surface carries its own rating. Category placement is editorial. For current ratings, see the <a href="https://beau-finopsorg.github.io/focus-gap-analyses/">readiness scorecard</a> and the <a href="https://beau-finopsorg.github.io/focus-gap-analyses/by-company.html">by-company index</a>.</p>
+  <p>Unofficial community project by Beau Nelford. Content licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Product names and marks belong to their owners. The specification is published at <a href="https://focus.finops.org">focus.finops.org</a>. Corrections are welcome by <a href="https://github.com/beau-finopsorg/focus-ecosystem/issues">issue</a> or <a href="https://github.com/beau-finopsorg/focus-ecosystem/pulls">pull request</a>.</p>
+</div></footer>
+</body>
+</html>
