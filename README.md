@@ -25,7 +25,7 @@ Latest spec release: **v1.4**. In progress: **v1.5**. Registry last verified: **
 
 ## Index
 
-**Updated** shows when the linked resource itself last changed, checked weekly (last check: **2026-11-21**).
+**Updated** shows when the linked resource itself last changed, checked weekly (last check: **2026-11-24**).
 
 🟢 within 90 days · 🟡 within a year · 🔴 over a year · ⚪ the source publishes no date and has not changed since tracking began
 
@@ -111,7 +111,7 @@ Supporting utilities, requirements tooling, and AI access.
 | [focus_requirements_model_analyzer](https://github.com/FinOps-Open-Cost-and-Usage-Spec/focus_requirements_model_analyzer) | repo | Model and view FOCUS normative requirements. | 🟡 2026-06-06 |
 | [FOCUS_RM_Extraction](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_RM_Extraction) | repo | Extract and compare the Requirements Model for FOCUS development. | 🟢 2026-11-02 |
 | [focus-otel-semconv](https://github.com/FinOps-Open-Cost-and-Usage-Spec/focus-otel-semconv) | repo | Community specification repository for a focus.* identifier registry (OpenTelemetry semantic conventions). Fork. | 🟡 2026-07-25 |
-| [focus-tools](https://github.com/beau-finopsorg/focus-tools) | repo | Unofficial community schema maps (FOCUS 1.0 through 1.5) and reference architectures. Version 1.5 is a candidate / pre-release. | ⚪ Not dated |
+| [focus-tools](https://github.com/beau-finopsorg/focus-tools) | repo | Unofficial community schema maps (FOCUS 1.0 through 1.5) and reference architectures. Version 1.5 is a candidate / pre-release. | 🟢 2026-11-21 |
 | [focus-tools (pages)](https://beau-finopsorg.github.io/focus-tools/) | site | Published site for the unofficial community schema maps and reference architectures. | ⚪ Not dated |
 
 ### Conformance and Governance
@@ -143,7 +143,7 @@ Who produces and consumes FOCUS, and how to start.
 | [FinOps Practitioners Adopting FOCUS](https://focus.finops.org/adoption/finops-practitioners/) | doc | Practitioner success stories. | 🟡 2025-12-05 |
 | [SaaS Vendors Adopting FOCUS](https://focus.finops.org/adoption/saas-vendors/) | doc | SaaS vendor adoption. | 🟡 2025-12-05 |
 | [FinOps Foundation FOCUS topic page](https://www.finops.org/topic/focus/) | site | FOCUS content on finops.org. | 🟢 2026-11-19 |
-| [focus-gap-analyses](https://github.com/beau-finopsorg/focus-gap-analyses) | repo | Unofficial community gap analyses of 98 data generators, based on public documentation only. Ratings are not certification results. | ⚪ Not dated |
+| [focus-gap-analyses](https://github.com/beau-finopsorg/focus-gap-analyses) | repo | Unofficial community gap analyses of 98 data generators, based on public documentation only. Ratings are not certification results. | 🟢 2026-11-21 |
 | [focus-gap-analyses (pages)](https://beau-finopsorg.github.io/focus-gap-analyses/) | site | Readiness scorecard, by-company index, and HTML copies of the 98 unofficial community gap analyses. | ⚪ Not dated |
 | [focus-ecosystem (pages)](https://beau-finopsorg.github.io/focus-ecosystem/) | site | Unofficial community landscape pages: the FOCUS ecosystem landscape (adoption data retrieved 2026-09-08) and the data generator readiness landscape. Ratings are not certification results. | ⚪ Not dated |
 
@@ -163,7 +163,7 @@ Providers listed in the FOCUS provider directory.
 |---|---|---|
 | Alibaba Cloud | [Link](https://www.alibabacloud.com/help/en/user-center/user-guide/export-alibaba-cloud-standard-billing-focus) | ⚪ Not dated |
 | AWS | [Link](https://docs.aws.amazon.com/cur/latest/userguide/dataexports-create-standard.html) | ⚪ Not dated |
-| Cloudflare | [Link](https://developers.cloudflare.com/api/resources/billing/) | ⚪ Not dated |
+| Cloudflare | [Link](https://developers.cloudflare.com/api/resources/billing/) | 🟢 2026-11-24\* |
 | CoreWeave | [Link](https://docs.coreweave.com/billing/focus-export-api) | 🟢 2026-11-09 |
 | Databricks | [Link](https://github.com/databricks-solutions/cloud-infra-costs/tree/main/focus) | 🟢 2026-10-30 |
 | Google Cloud | [Link](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-focus-setup) | ⚪ Not dated |
